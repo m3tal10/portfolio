@@ -1,115 +1,156 @@
-import Image from "next/image";
-import localFont from "next/font/local";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Button from "@/components/Button";
+import Circle from "@/ui/shapes/Circle";
+import Square from "@/ui/shapes/Square";
+import Triangle from "@/ui/shapes/Triangle";
 
 export default function Home() {
+  const shapeStyles = "absolute transition-all duration-1000 hover:rotate-180";
+  const serviceListStyles =
+    "dark:bg-brand-primary-dark flex flex-col items-center justify-center gap-4 bg-brand-secondary px-10 py-7 transition-colors duration-1000 dark:text-brand-secondary lg:px-20";
+  const servicesPstyle1 = "text-sm font-medium lg:text-lg";
+  const servicesPstyle2 = "text-center text-xs text-text-light lg:text-base";
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="flex flex-col gap-32 pb-10">
+      <div className="items-left dark:bg-brand-primary-dark relative flex flex-col gap-6 bg-brand-secondary p-16 transition-colors duration-1000 dark:text-brand-secondary">
+        <p className="z-10 w-[500px] text-5xl font-extrabold">
+          I&apos;m Mashrafie Rahim Sheikh <br />
+          <span className="text-brand-primary">Full-Stack</span> Developer
+        </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <p className="dark:text-text-light-dark mb-4 w-[400px] text-text-light">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat
+          feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc
+          lectus.
+        </p>
+        <div className="">
+          <Button>HIRE ME &rarr;</Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Shapes Background */}
+        <span className={`${shapeStyles} left-[10%] top-[15%]`}>
+          {" "}
+          <Circle />{" "}
+        </span>
+        <span className={`${shapeStyles} left-[80%] top-[25%]`}>
+          {" "}
+          <Triangle />{" "}
+        </span>
+        <span className={`${shapeStyles} left-[70%] top-[47%]`}>
+          {" "}
+          <Square />{" "}
+        </span>
+        <span className={`${shapeStyles} left-[46%] top-[27%]`}>
+          {" "}
+          <Square />{" "}
+        </span>
+        <span className={`${shapeStyles} left-[24%] top-[76%]`}>
+          {" "}
+          <Triangle />{" "}
+        </span>
+        <span className={`${shapeStyles} left-[40%] top-[60%]`}>
+          {" "}
+          <Circle />{" "}
+        </span>
+        <span className={`${shapeStyles} left-[60%] top-[70%]`}>
+          {" "}
+          <Circle />{" "}
+        </span>
+        <span className={`${shapeStyles} left-[59%] top-[15%]`}>
+          {" "}
+          <Triangle />{" "}
+        </span>
+        <span className={`${shapeStyles} left-[69%] top-[85%]`}>
+          {" "}
+          <Square />{" "}
+        </span>
+      </div>
+      {/* Services Section */}
+      <div className="">
+        <div className="flex flex-col items-center gap-6 px-48">
+          <p className="text-3xl font-bold">My Services</p>
+          <p className="dark:text-text-light-dark mb-10 text-center text-text-light transition-colors duration-1000">
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit. lorem ipsum
+          </p>
+        </div>
+        <div className="">
+          <ul className="grid grid-cols-3 gap-5">
+            {/* Front-end section */}
+            <li className="dark:bg-brand-primary-dark flex flex-col items-center justify-center gap-4 bg-brand-secondary px-10 py-7 transition-colors duration-1000 dark:text-brand-secondary lg:px-20">
+              <svg
+                width="68"
+                height="68"
+                viewBox="0 0 68 68"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="fill-brand-primary"
+              >
+                <path d="M63.2188 7.4375H4.78125C3.79531 7.43859 2.85007 7.83074 2.1529 8.5279C1.45574 9.22507 1.06359 10.1703 1.0625 11.1562V48.3438C1.06359 49.3297 1.45574 50.2749 2.1529 50.9721C2.85007 51.6693 3.79531 52.0614 4.78125 52.0625H26.0552L24.7802 55.25H19.125C18.8432 55.25 18.573 55.3619 18.3737 55.5612C18.1744 55.7605 18.0625 56.0307 18.0625 56.3125V58.4375H11.6875C11.4057 58.4375 11.1355 58.5494 10.9362 58.7487C10.7369 58.948 10.625 59.2182 10.625 59.5C10.625 59.7818 10.7369 60.052 10.9362 60.2513C11.1355 60.4506 11.4057 60.5625 11.6875 60.5625H56.3125C56.5943 60.5625 56.8645 60.4506 57.0638 60.2513C57.2631 60.052 57.375 59.7818 57.375 59.5C57.375 59.2182 57.2631 58.948 57.0638 58.7487C56.8645 58.5494 56.5943 58.4375 56.3125 58.4375H49.9375V56.3125C49.9375 56.0307 49.8256 55.7605 49.6263 55.5612C49.427 55.3619 49.1568 55.25 48.875 55.25H43.2198L41.9448 52.0625H63.2188C64.2047 52.0614 65.1499 51.6693 65.8471 50.9721C66.5443 50.2749 66.9364 49.3297 66.9375 48.3438V11.1562C66.9364 10.1703 66.5443 9.22507 65.8471 8.5279C65.1499 7.83074 64.2047 7.43859 63.2188 7.4375ZM47.8125 57.375V58.4375H20.1875V57.375H47.8125ZM27.0698 55.25L28.3448 52.0625H39.6552L40.9302 55.25H27.0698ZM64.8125 48.3438C64.8121 48.7663 64.6441 49.1715 64.3453 49.4703C64.0465 49.7691 63.6413 49.9371 63.2188 49.9375H4.78125C4.35867 49.9371 3.9535 49.7691 3.65469 49.4703C3.35588 49.1715 3.18785 48.7663 3.1875 48.3438V45.6875H64.8125V48.3438ZM64.8125 43.5625H3.1875V11.1562C3.18785 10.7337 3.35588 10.3285 3.65469 10.0297C3.9535 9.73088 4.35867 9.56285 4.78125 9.5625H63.2188C63.6413 9.56285 64.0465 9.73088 64.3453 10.0297C64.6441 10.3285 64.8121 10.7337 64.8125 11.1562V43.5625Z" />
+                <path d="M29.1671 34.888C29.2838 34.9646 29.4144 35.0174 29.5514 35.0435C29.6885 35.0696 29.8294 35.0684 29.966 35.04C30.1026 35.0117 30.2323 34.9567 30.3477 34.8782C30.4631 34.7997 30.5618 34.6992 30.6384 34.5826L39.0056 21.8326C39.1602 21.597 39.2149 21.3096 39.1577 21.0337C39.1005 20.7578 38.936 20.5159 38.7004 20.3613C38.4648 20.2066 38.1774 20.1519 37.9015 20.2092C37.6256 20.2664 37.3837 20.4309 37.2291 20.6665L28.8619 33.4165C28.7853 33.5331 28.7324 33.6637 28.7063 33.8008C28.6802 33.9379 28.6813 34.0788 28.7096 34.2155C28.738 34.3521 28.793 34.4819 28.8715 34.5973C28.9499 34.7127 29.0504 34.8115 29.1671 34.888Z" />
+                <path d="M40.7573 34.8165C40.9738 34.9969 41.2531 35.0839 41.5337 35.0583C41.8143 35.0328 42.0733 34.8968 42.2537 34.6804L47.5662 28.3054C47.7253 28.1144 47.8124 27.8738 47.8124 27.6252C47.8124 27.3767 47.7253 27.136 47.5662 26.9451L42.2537 20.5701C42.1647 20.462 42.0551 20.3726 41.9314 20.307C41.8077 20.2413 41.6723 20.2008 41.5328 20.1878C41.3934 20.1747 41.2528 20.1893 41.119 20.2307C40.9853 20.2722 40.861 20.3397 40.7534 20.4293C40.6459 20.519 40.5571 20.629 40.4921 20.7531C40.4272 20.8772 40.3875 21.0128 40.3752 21.1523C40.3629 21.2918 40.3783 21.4324 40.4205 21.5659C40.4627 21.6994 40.5309 21.8233 40.6212 21.9304L45.3668 27.6252L40.6212 33.3201C40.4408 33.5366 40.3538 33.8159 40.3793 34.0965C40.4049 34.3771 40.5408 34.6361 40.7573 34.8165Z" />
+                <path d="M25.7462 34.6804C25.8352 34.7884 25.9448 34.8779 26.0685 34.9435C26.1922 35.0091 26.3276 35.0496 26.4671 35.0627C26.6065 35.0758 26.7471 35.0612 26.8809 35.0197C27.0146 34.9782 27.1389 34.9107 27.2465 34.8211C27.354 34.7315 27.4428 34.6214 27.5078 34.4974C27.5727 34.3733 27.6124 34.2376 27.6247 34.0981C27.637 33.9586 27.6216 33.8181 27.5794 33.6845C27.5372 33.551 27.469 33.4272 27.3787 33.3201L22.6331 27.6252L27.3787 21.9304C27.469 21.8233 27.5372 21.6994 27.5794 21.5659C27.6216 21.4324 27.637 21.2918 27.6247 21.1523C27.6124 21.0128 27.5727 20.8772 27.5078 20.7531C27.4428 20.629 27.354 20.519 27.2465 20.4293C27.1389 20.3397 27.0146 20.2722 26.8809 20.2307C26.7471 20.1893 26.6065 20.1747 26.4671 20.1878C26.3276 20.2008 26.1922 20.2413 26.0685 20.307C25.9448 20.3726 25.8352 20.462 25.7462 20.5701L20.4337 26.9451C20.2746 27.136 20.1875 27.3767 20.1875 27.6252C20.1875 27.8737 20.2746 28.1144 20.4337 28.3054L25.7462 34.6804Z" />
+              </svg>
+              <p className="text-sm font-medium lg:text-lg">
+                Front-end Development
+              </p>
+              <p className="text-center text-xs text-text-light lg:text-base">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit. lorem
+                ipsum
+              </p>
+            </li>
+            <li className={serviceListStyles}>
+              <svg
+                className="fill-brand-primary"
+                width="68"
+                height="68"
+                xmlns="http://www.w3.org/2000/svg"
+                data-name="Layer 1"
+                viewBox="0 0 98 95"
+              >
+                <path
+                  className="h-16"
+                  d="M81.219,15.012H87.64A5.054,5.054,0,0,1,91.032,16.3,4.325,4.325,0,0,1,92.5,19.511V72.825a4.326,4.326,0,0,1-1.468,3.212,5.059,5.059,0,0,1-3.392,1.288H56.167l.575,4.588h8.589A5.1,5.1,0,0,1,70.42,87v4.035a1.054,1.054,0,0,1-1.055,1.054H25.635a1.055,1.055,0,0,1-1.055-1.054V87a5.1,5.1,0,0,1,5.089-5.088h8.59l.574-4.588H7.36a5.059,5.059,0,0,1-3.392-1.288A4.326,4.326,0,0,1,2.5,72.825V19.511A4.325,4.325,0,0,1,3.968,16.3,5.054,5.054,0,0,1,7.36,15.012H46.176c0-1.966.008-3.934.009-5.9,0-.047,0-.094,0-.141,0-1.9,2.129-3.5,5.573-4.546A42.823,42.823,0,0,1,63.7,2.91a42.828,42.828,0,0,1,11.95,1.516c3.421,1.04,5.545,2.624,5.573,4.508h0v.053q0,3.01-.008,6.025ZM43.334,73.17h8.332a1.055,1.055,0,1,0,0-2.11H43.334a1.055,1.055,0,0,0,0,2.11Zm18.238-54.9h0a1.052,1.052,0,0,0-.387,2.068h0a1.052,1.052,0,1,0,.387-2.068ZM54.263,17.23h0a1.053,1.053,0,0,0-.239,2.093h0a1.053,1.053,0,1,0,.239-2.092Zm7.243,20.709h0a1.054,1.054,0,0,0-.256,2.093h0a1.054,1.054,0,1,0,.255-2.093Zm-7.181-1.017h0A1.054,1.054,0,1,0,53.962,39h0a1.054,1.054,0,1,0,.363-2.077Zm7.181-8.909h0a1.054,1.054,0,0,0-.256,2.093h0a1.054,1.054,0,0,0,.255-2.093Zm-7.243-1.025h0a1.053,1.053,0,1,0-.239,2.092h0a1.053,1.053,0,1,0,.239-2.092Zm-8.086-9.866H7.36a2.954,2.954,0,0,0-1.983.735,2.239,2.239,0,0,0-.768,1.654V72.825a2.236,2.236,0,0,0,.768,1.654,2.949,2.949,0,0,0,1.983.736H87.64a2.949,2.949,0,0,0,1.983-.736,2.236,2.236,0,0,0,.768-1.654V19.511a2.239,2.239,0,0,0-.768-1.654,2.954,2.954,0,0,0-1.983-.735H81.214l-.009,3.164h4.967a1.055,1.055,0,0,1,1.055,1.054V67.961a1.055,1.055,0,0,1-1.055,1.054H8.828a1.054,1.054,0,0,1-1.054-1.054V21.34a1.054,1.054,0,0,1,1.054-1.054H46.185V19.129c0-.047,0-.094,0-.141h0q-.006-.933-.008-1.866Zm2.109,1.844v.022h0c0,.864,1.557,1.77,4.074,2.536A40.769,40.769,0,0,0,63.7,22.941a40.769,40.769,0,0,0,11.34-1.417c2.509-.763,4.063-1.665,4.074-2.527V12a14.041,14.041,0,0,1-3.464,1.515A42.865,42.865,0,0,1,63.7,15.035a42.86,42.86,0,0,1-11.95-1.516A13.964,13.964,0,0,1,48.286,12v6.965ZM79.118,8.981V8.963C79.107,8.1,77.553,7.2,75.044,6.437A40.728,40.728,0,0,0,63.7,5.019a40.728,40.728,0,0,0-11.34,1.418C49.847,7.2,48.29,8.108,48.29,8.972s1.557,1.771,4.074,2.536A40.732,40.732,0,0,0,63.7,12.925a40.732,40.732,0,0,0,11.34-1.417c2.509-.763,4.063-1.665,4.074-2.527ZM81.2,22.4c-.014,5.546-.018,11.091.027,16.624,0,1.9-2.129,3.5-5.573,4.546A42.828,42.828,0,0,1,63.7,45.081a42.823,42.823,0,0,1-11.95-1.516c-3.444-1.047-5.573-2.645-5.573-4.546h0c-.02-3.289,0-6.584,0-9.874,0-.047,0-.094,0-.142,0-.032,0-.064,0-.095V22.4H9.883V66.906H85.117V22.4ZM51.754,23.534a14,14,0,0,1-3.468-1.517v6.9c0,.03,0,.06,0,.09,0,.865,1.557,1.771,4.074,2.536A40.732,40.732,0,0,0,63.7,32.956a40.732,40.732,0,0,0,11.34-1.417c2.509-.763,4.063-1.665,4.074-2.527V22.02a14,14,0,0,1-3.464,1.514A42.828,42.828,0,0,1,63.7,25.05a42.823,42.823,0,0,1-11.95-1.516Zm-3.468,8.5c0,2.328.01,4.659,0,6.987h0c0,.864,1.557,1.77,4.074,2.536A40.769,40.769,0,0,0,63.7,42.972a40.769,40.769,0,0,0,11.34-1.417c2.517-.766,4.074-1.672,4.074-2.536v-.03h0V32.035a14,14,0,0,1-3.464,1.514A42.825,42.825,0,0,1,63.7,35.066a42.819,42.819,0,0,1-11.95-1.517,13.928,13.928,0,0,1-3.468-1.517ZM19.724,30.5l-5.585,4.817a1.053,1.053,0,0,0-.107,1.484.946.946,0,0,0,.12.117l5.572,4.807a1.051,1.051,0,0,0,1.376-1.59l-4.663-4.022L21.1,32.086a1.051,1.051,0,0,0-1.376-1.59Zm15.169,1.59,4.662,4.023-4.662,4.022a1.051,1.051,0,1,0,1.376,1.59l5.572-4.807a1.017,1.017,0,0,0,.12-.117,1.053,1.053,0,0,0-.108-1.484L36.269,30.5a1.051,1.051,0,1,0-1.376,1.59Zm-6.3-1.429L25.394,40.942a1.051,1.051,0,1,0,2.01.618l3.2-10.285a1.051,1.051,0,1,0-2.01-.618ZM18.323,64.282H76.678a1.055,1.055,0,0,0,0-2.11H18.323a1.055,1.055,0,0,0,0,2.11Zm-.135-6.116H61.36a1.055,1.055,0,0,0,0-2.109H18.188a1.055,1.055,0,1,0,0,2.109Zm46.587,0H76.543a1.055,1.055,0,1,0,0-2.109H64.775a1.055,1.055,0,0,0,0,2.109ZM24.165,52.11h46.67a1.055,1.055,0,1,0,0-2.11H24.165a1.055,1.055,0,0,0,0,2.11Zm16.218,29.8H54.617l-.574-4.588H40.957l-.574,4.588Zm24.948,2.109H29.669A2.991,2.991,0,0,0,26.69,87v2.98H68.31V87a2.991,2.991,0,0,0-2.979-2.979Z"
+                />
+              </svg>
+              <p className={servicesPstyle1}>Back-end Development</p>
+              <p className={servicesPstyle2}>
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit. lorem
+                ipsum
+              </p>
+            </li>
+            <li className={serviceListStyles}>
+              <svg
+                className="fill-brand-primary"
+                width="68"
+                height="68"
+                xmlns="http://www.w3.org/2000/svg"
+                data-name="Layer 1"
+                viewBox="0 0 504 510"
+              >
+                <g>
+                  <path d="M85.312,144.33H28.394c-2.209,0-4,1.791-4,4s1.791,4,4,4h56.918c2.209,0,4-1.791,4-4S87.521,144.33,85.312,144.33z" />
+                  <path d="M85.312,173.196H28.394c-2.209,0-4,1.791-4,4s1.791,4,4,4h56.918c2.209,0,4-1.791,4-4S87.521,173.196,85.312,173.196z" />
+                  <path d="M85.312,321.649H28.394c-2.209,0-4,1.791-4,4s1.791,4,4,4h56.918c2.209,0,4-1.791,4-4S87.521,321.649,85.312,321.649z" />
+                  <path d="M85.312,350.516H28.394c-2.209,0-4,1.791-4,4s1.791,4,4,4h56.918c2.209,0,4-1.791,4-4S87.521,350.516,85.312,350.516z" />
+                  <path d="M500,0H394.295c-2.209,0-4,1.791-4,4v57.855h-20.394c-2.209,0-4,1.791-4,4v82.598h-16.394V115.34   c0-18.87-49.053-28.742-97.508-28.742s-97.508,9.873-97.508,28.742v74.351h-16.394v-45.485c0-2.209-1.791-4-4-4h-20.394v-37.237   c0-2.209-1.791-4-4-4H4c-2.209,0-4,1.791-4,4v123.711c0,2.209,1.791,4,4,4h105.705c2.209,0,4-1.791,4-4v-78.475h16.394v45.485   c0,2.209,1.791,4,4,4h20.394v78.598h-20.394c-2.209,0-4,1.791-4,4v45.484h-16.394v-45.484c0-2.209-1.791-4-4-4H4   c-2.209,0-4,1.791-4,4V404c0,2.209,1.791,4,4,4h105.705c2.209,0,4-1.791,4-4v-70.227h20.394c2.209,0,4-1.791,4-4v-45.484h16.394   v4.247c0,18.869,49.053,28.742,97.508,28.742s97.508-9.873,97.508-28.742v-28.989h20.394c2.209,0,4-1.791,4-4v-45.485h16.394   v70.228c0,2.209,1.791,4,4,4H500c2.209,0,4-1.791,4-4V156.577c0-2.209-1.791-4-4-4H394.295c-2.209,0-4,1.791-4,4v45.484h-20.394   c-2.209,0-4,1.791-4,4v45.485h-16.394v-95.093h20.394c2.209,0,4-1.791,4-4V69.855h16.394v57.856c0,2.209,1.791,4,4,4H500   c2.209,0,4-1.791,4-4V4C504,1.791,502.209,0,500,0z M105.705,106.969v12.618H8v-12.618H105.705z M105.705,222.681H8v-95.093h97.705   V222.681z M105.705,284.289v12.618H8v-12.618H105.705z M105.705,400H8v-95.093h97.705V400z M398.295,276.289v-95.093H496v95.093   H398.295z M496,160.577v12.619h-97.705v-12.619H496z M341.508,257.075c-28.012,12.565-58.897,19.214-89.508,19.214   c-30.613,0-61.497-6.649-89.508-19.214v-7.738c28.155,12.089,58.966,18.457,89.508,18.457s61.352-6.368,89.508-18.457V257.075z    M341.508,149.859c-28.012,12.564-58.897,19.214-89.508,19.214c-30.612,0-61.496-6.649-89.508-19.214v-22.359   c15.836,10.928,52.84,16.583,89.508,16.583s73.672-5.655,89.508-16.583V149.859z M341.508,211.715   c-28.011,12.564-58.896,19.213-89.508,19.213c-30.611,0-61.495-6.649-89.508-19.213v-7.738   c28.154,12.088,58.964,18.456,89.508,18.456c30.541,0,61.352-6.368,89.508-18.456V211.715z M162.492,220.471   c28.157,12.089,58.967,18.457,89.508,18.457c30.541,0,61.352-6.368,89.508-18.456v20.108   c-28.011,12.565-58.896,19.214-89.508,19.214c-30.613,0-61.497-6.649-89.508-19.214V220.471z M341.508,195.219   c-28.011,12.564-58.896,19.213-89.508,19.213c-30.614,0-61.499-6.649-89.508-19.213V175.11   c28.155,12.089,58.965,18.456,89.508,18.456c30.541,0,61.352-6.368,89.508-18.457V195.219z M341.508,166.353   c-28.011,12.564-58.896,19.214-89.508,19.214c-30.614,0-61.498-6.649-89.508-19.214v-7.738   c28.156,12.089,58.967,18.457,89.508,18.457c30.541,0,61.351-6.368,89.508-18.457V166.353z M252,94.598   c54.64,0,89.508,12.285,89.508,20.742S306.64,136.083,252,136.083s-89.508-12.285-89.508-20.742S197.36,94.598,252,94.598z    M252,309.278c-54.64,0-89.508-12.285-89.508-20.742v-22.704c28.155,12.089,58.966,18.457,89.508,18.457   c30.54,0,61.35-6.368,89.508-18.457v22.704C341.508,296.993,306.64,309.278,252,309.278z M496,8v12.619h-97.705V8H496z    M398.295,123.711V28.619H496v95.093H398.295z" />
+                  <path d="M475.606,45.361h-56.918c-2.209,0-4,1.791-4,4s1.791,4,4,4h56.918c2.209,0,4-1.791,4-4S477.815,45.361,475.606,45.361z" />
+                  <path d="M475.606,74.227h-56.918c-2.209,0-4,1.791-4,4s1.791,4,4,4h56.918c2.209,0,4-1.791,4-4S477.815,74.227,475.606,74.227z" />
+                  <path d="M475.606,197.938h-56.918c-2.209,0-4,1.791-4,4s1.791,4,4,4h56.918c2.209,0,4-1.791,4-4S477.815,197.938,475.606,197.938z" />
+                  <path d="M475.606,226.804h-56.918c-2.209,0-4,1.791-4,4s1.791,4,4,4h56.918c2.209,0,4-1.791,4-4S477.815,226.804,475.606,226.804z" />
+                </g>
+              </svg>
+              <p className={servicesPstyle1}>Data Modeling</p>
+              <p className={servicesPstyle2}>
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit. lorem
+                ipsum
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
   );
 }
