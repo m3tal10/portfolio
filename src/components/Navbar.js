@@ -16,7 +16,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="dark:bg-brand-primary-dark fixed bottom-0 right-0 flex h-full flex-col items-center gap-44 bg-stone-100 px-14 py-14 transition-colors duration-1000 dark:text-brand-secondary">
+    <nav className="dark:bg-brand-primary-dark fixed bottom-0 right-0 flex h-full flex-col items-center gap-44 bg-stone-100 px-10 py-14 transition-colors duration-1000 dark:text-brand-secondary">
       <button
         onClick={handleDarkModeToggle}
         className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-1000 dark:bg-text-light dark:hover:bg-brand-primary`}

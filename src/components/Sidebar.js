@@ -14,7 +14,7 @@ function Sidebar() {
   return (
     <div className="dark:bg-brand-primary-dark fixed left-0 top-0 h-screen w-[305px] bg-stone-100 transition-colors duration-1000 dark:text-brand-secondary">
       {/* <div className="fixed left-0 top-0 flex max-w-[305px] flex-col items-center gap-24 overflow-y-scroll bg-stone-100 px-12 py-14 scrollbar dark:bg-stone-900"> */}
-      <div className="flex h-full flex-col items-center gap-24 overflow-y-scroll px-12 py-14 scrollbar">
+      <div className="flex h-full flex-col items-center gap-24 overflow-y-scroll px-8 py-14 scrollbar">
         <div className="flex w-full flex-col items-center justify-center">
           <img
             className="bg-profile-back rounded-full"
@@ -525,17 +525,17 @@ function Sidebar() {
         </div>
         {/* Info section */}
         <div className="dark:text-brand-primary-dark flex w-full flex-col gap-3 border-t-2 pt-20">
-          <p className="flex items-center justify-between text-xl">
+          <p className="flex items-center justify-between text-lg">
             <span className="bg-brand-primary px-2">Age :</span>
             <span className="rounded-md bg-slate-200">24</span>
           </p>
-          <p className="flex items-center justify-between text-xl">
+          <p className="flex items-center justify-between text-lg">
             <span className="bg-brand-primary px-2">Residence :</span>
             <span className="w-6">
               <img src="/Icons/Flag_of_Bangladesh.svg" alt="Bangladesh Flag" />
             </span>
           </p>
-          <p className="flex items-center justify-between text-xl">
+          <p className="flex items-center justify-between text-lg">
             <span className="bg-brand-primary px-2">Address :</span>
             <span className="rounded-md bg-slate-200">Dhaka, Bangladesh</span>
           </p>
