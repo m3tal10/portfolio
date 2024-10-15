@@ -6,18 +6,19 @@ import Triangle from "@/ui/shapes/Triangle";
 export default function Home() {
   const shapeStyles = "absolute transition-all duration-1000 hover:rotate-180";
   const serviceListStyles =
-    "dark:bg-brand-primary-dark flex flex-col items-center justify-center gap-4 bg-brand-secondary px-10 py-7 transition-colors duration-1000 dark:text-brand-secondary lg:px-20";
-  const servicesPstyle1 = "text-sm font-medium lg:text-lg";
-  const servicesPstyle2 = "text-center text-xs text-text-light lg:text-base";
+    "flex flex-col items-center gap-4 bg-brand-secondary px-4 py-4 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:p-8";
+  const servicesPstyle1 = "text-center text-sm font-medium lg:text-lg";
+  const servicesPstyle2 =
+    "text-center text-xs text-text-light dark:text-text-light-dark lg:text-base";
   return (
-    <main className="flex flex-col gap-32 pb-10">
-      <div className="items-left dark:bg-brand-primary-dark relative flex flex-col gap-6 bg-brand-secondary p-16 transition-colors duration-1000 dark:text-brand-secondary">
-        <p className="z-10 w-[500px] text-5xl font-extrabold">
+    <main className="flex w-screen flex-col gap-10 overflow-auto pb-5 scrollbar lg:w-auto lg:gap-32 lg:pb-10">
+      <div className="items-left relative flex flex-col gap-6 bg-brand-secondary p-8 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:p-16">
+        <p className="inline-block text-xl font-extrabold lg:w-2/3 lg:text-5xl">
           I&apos;m Mashrafie Rahim Sheikh <br />
           <span className="text-brand-primary">Full-Stack</span> Developer
         </p>
 
-        <p className="dark:text-text-light-dark mb-4 w-[400px] text-text-light">
+        <p className="mb-4 w-[400px] text-text-light dark:text-text-light-dark">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat
           feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc
           lectus.
@@ -66,17 +67,17 @@ export default function Home() {
       </div>
       {/* Services Section */}
       <div className="">
-        <div className="flex flex-col items-center gap-6 px-48">
+        <div className="flex flex-col items-center gap-6 px-8 lg:px-48">
           <p className="text-3xl font-bold">My Services</p>
-          <p className="dark:text-text-light-dark mb-10 text-center text-text-light transition-colors duration-1000">
+          <p className="mb-10 text-center text-text-light transition-colors duration-1000">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. lorem ipsum
           </p>
         </div>
         <div className="">
-          <ul className="grid grid-cols-3 gap-5">
+          <ul className="grid grid-cols-2 gap-5 p-3 lg:grid-cols-3">
             {/* Front-end section */}
-            <li className="dark:bg-brand-primary-dark flex flex-col items-center justify-center gap-4 bg-brand-secondary px-10 py-7 transition-colors duration-1000 dark:text-brand-secondary lg:px-20">
+            <li className="flex flex-col items-center gap-4 bg-brand-secondary px-4 py-4 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:p-8">
               <svg
                 width="68"
                 height="68"
@@ -90,10 +91,10 @@ export default function Home() {
                 <path d="M40.7573 34.8165C40.9738 34.9969 41.2531 35.0839 41.5337 35.0583C41.8143 35.0328 42.0733 34.8968 42.2537 34.6804L47.5662 28.3054C47.7253 28.1144 47.8124 27.8738 47.8124 27.6252C47.8124 27.3767 47.7253 27.136 47.5662 26.9451L42.2537 20.5701C42.1647 20.462 42.0551 20.3726 41.9314 20.307C41.8077 20.2413 41.6723 20.2008 41.5328 20.1878C41.3934 20.1747 41.2528 20.1893 41.119 20.2307C40.9853 20.2722 40.861 20.3397 40.7534 20.4293C40.6459 20.519 40.5571 20.629 40.4921 20.7531C40.4272 20.8772 40.3875 21.0128 40.3752 21.1523C40.3629 21.2918 40.3783 21.4324 40.4205 21.5659C40.4627 21.6994 40.5309 21.8233 40.6212 21.9304L45.3668 27.6252L40.6212 33.3201C40.4408 33.5366 40.3538 33.8159 40.3793 34.0965C40.4049 34.3771 40.5408 34.6361 40.7573 34.8165Z" />
                 <path d="M25.7462 34.6804C25.8352 34.7884 25.9448 34.8779 26.0685 34.9435C26.1922 35.0091 26.3276 35.0496 26.4671 35.0627C26.6065 35.0758 26.7471 35.0612 26.8809 35.0197C27.0146 34.9782 27.1389 34.9107 27.2465 34.8211C27.354 34.7315 27.4428 34.6214 27.5078 34.4974C27.5727 34.3733 27.6124 34.2376 27.6247 34.0981C27.637 33.9586 27.6216 33.8181 27.5794 33.6845C27.5372 33.551 27.469 33.4272 27.3787 33.3201L22.6331 27.6252L27.3787 21.9304C27.469 21.8233 27.5372 21.6994 27.5794 21.5659C27.6216 21.4324 27.637 21.2918 27.6247 21.1523C27.6124 21.0128 27.5727 20.8772 27.5078 20.7531C27.4428 20.629 27.354 20.519 27.2465 20.4293C27.1389 20.3397 27.0146 20.2722 26.8809 20.2307C26.7471 20.1893 26.6065 20.1747 26.4671 20.1878C26.3276 20.2008 26.1922 20.2413 26.0685 20.307C25.9448 20.3726 25.8352 20.462 25.7462 20.5701L20.4337 26.9451C20.2746 27.136 20.1875 27.3767 20.1875 27.6252C20.1875 27.8737 20.2746 28.1144 20.4337 28.3054L25.7462 34.6804Z" />
               </svg>
-              <p className="text-sm font-medium lg:text-lg">
+              <p className="text-center text-sm font-medium lg:text-lg">
                 Front-end Development
               </p>
-              <p className="text-center text-xs text-text-light lg:text-base">
+              <p className="text-center text-xs text-text-light dark:text-text-light-dark lg:text-base">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit. lorem
                 ipsum

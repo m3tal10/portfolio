@@ -1,42 +1,40 @@
 function education() {
-  const listStyles = "";
+  const listStyles = "grid grid-cols-[2fr_3fr] gap-10 pt-4 lg:gap-40";
   const leftSpanStyles =
-    "dark:text-text-light-dark text-sm text-text-light md:text-base";
+    "text-sm text-text-light dark:text-text-light-dark md:text-base";
   const rightSpanStyles = "";
   return (
-    <main className="mt-8 flex flex-col items-center gap-8 pb-10">
-      <div className="w-[500px]">
-        <p className="text-center text-xl font-bold md:text-2xl lg:text-3xl">
-          Education
-        </p>
-      </div>
+    <main className="mt-8 flex flex-col items-center gap-8 overflow-y-auto p-3 pb-5 scrollbar lg:pb-10">
+      <p className="text-center text-xl font-bold md:text-2xl lg:text-3xl">
+        Education
+      </p>
 
-      <ul className="dark:bg-brand-primary-dark flex flex-col gap-8 bg-brand-secondary p-6 transition-colors duration-1000 dark:text-brand-secondary">
-        <li className="grid grid-cols-[2fr_3fr] gap-40">
+      <ul className="flex flex-col gap-10 rounded-md bg-brand-secondary p-6 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:gap-20">
+        <li className="grid grid-cols-[2fr_3fr] gap-10 lg:gap-40">
           <div className="block items-start">
-            <p className="mb-4 font-medium md:text-xl">
+            <p className="mb-4 text-sm font-medium md:text-xl">
               University of the People
             </p>
             <p className="mb-4 flex items-center justify-between text-sm md:text-lg">
-              <span className="dark:text-text-light-dark text-sm text-text-light md:text-base">
+              <span className="text-sm text-text-light dark:text-text-light-dark md:text-base">
                 Graduation:
               </span>
-              <span className="hover:text-brand-primary-dark rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary">
+              <span className="rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary hover:text-brand-primary-dark">
                 2026
               </span>
             </p>
             <p className="mb-4 flex items-center justify-between text-sm md:text-lg">
               <span className={leftSpanStyles}>CGPA:</span>
-              <span className="hover:text-brand-primary-dark rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary">
+              <span className="rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary hover:text-brand-primary-dark">
                 3.98
               </span>
             </p>
           </div>
-          <div className="flex flex-col items-start gap-2">
-            <p className="mb-4 font-medium md:text-xl">
+          <div className="flex flex-col items-start gap-2 lg:gap-4">
+            <p className="font-medium md:text-xl">
               Computer Science & Engineering.
             </p>
-            <p className="dark:text-text-light-dark text-text-light">
+            <p className="text-text-light dark:text-text-light-dark">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
               dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar
               quisque sed amet, nulla nunc. Eleifend sodales posuere fusce
@@ -45,31 +43,31 @@ function education() {
           </div>
         </li>
         {/* Certificate 01 */}
-        <li className="grid grid-cols-[2fr_3fr] gap-40">
+        <li className="grid grid-cols-[2fr_3fr] gap-10 border-t-2 pt-10 lg:gap-40">
           <div className="block items-start">
-            <p className="mb-4 font-medium md:text-xl">
+            <p className="mb-4 text-sm font-medium md:text-xl">
               University of the People
             </p>
             <p className="mb-4 flex items-center justify-between text-sm md:text-lg">
-              <span className="dark:text-text-light-dark text-sm text-text-light md:text-base">
+              <span className="text-sm text-text-light dark:text-text-light-dark md:text-base">
                 Graduation:
               </span>
-              <span className="hover:text-brand-primary-dark rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary">
+              <span className="rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary hover:text-brand-primary-dark">
                 2026
               </span>
             </p>
             <p className="mb-4 flex items-center justify-between text-sm md:text-lg">
               <span className={leftSpanStyles}>CGPA:</span>
-              <span className="hover:text-brand-primary-dark rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary">
+              <span className="rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary hover:text-brand-primary-dark">
                 3.98
               </span>
             </p>
           </div>
-          <div className="flex flex-col items-start gap-2">
-            <p className="mb-4 font-medium md:text-xl">
+          <div className="flex flex-col items-start gap-2 lg:gap-4">
+            <p className="font-medium md:text-xl">
               Computer Science & Engineering.
             </p>
-            <p className="dark:text-text-light-dark text-text-light">
+            <p className="text-text-light dark:text-text-light-dark">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
               dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar
               quisque sed amet, nulla nunc. Eleifend sodales posuere fusce
@@ -78,31 +76,31 @@ function education() {
           </div>
         </li>
         {/* Certificate 02 */}
-        <li className="grid grid-cols-[2fr_3fr] gap-40">
+        <li className="grid grid-cols-[2fr_3fr] gap-10 border-t-2 pt-10 lg:gap-40">
           <div className="block items-start">
-            <p className="mb-4 font-medium md:text-xl">
+            <p className="mb-4 text-sm font-medium md:text-xl">
               University of the People
             </p>
             <p className="mb-4 flex items-center justify-between text-sm md:text-lg">
-              <span className="dark:text-text-light-dark text-sm text-text-light md:text-base">
+              <span className="text-sm text-text-light dark:text-text-light-dark md:text-base">
                 Graduation:
               </span>
-              <span className="hover:text-brand-primary-dark rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary">
+              <span className="rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary hover:text-brand-primary-dark">
                 2026
               </span>
             </p>
             <p className="mb-4 flex items-center justify-between text-sm md:text-lg">
               <span className={leftSpanStyles}>CGPA:</span>
-              <span className="hover:text-brand-primary-dark rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary">
+              <span className="rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary hover:text-brand-primary-dark">
                 3.98
               </span>
             </p>
           </div>
-          <div className="flex flex-col items-start gap-2">
-            <p className="mb-4 font-medium md:text-xl">
+          <div className="flex flex-col items-start gap-2 lg:gap-4">
+            <p className="font-medium md:text-xl">
               Computer Science & Engineering.
             </p>
-            <p className="dark:text-text-light-dark text-text-light">
+            <p className="text-text-light dark:text-text-light-dark">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
               dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar
               quisque sed amet, nulla nunc. Eleifend sodales posuere fusce
@@ -111,31 +109,31 @@ function education() {
           </div>
         </li>
         {/* Certificate 03 */}
-        <li className="grid grid-cols-[2fr_3fr] gap-40">
+        <li className="grid grid-cols-[2fr_3fr] gap-10 border-t-2 pt-10 lg:gap-40">
           <div className="block items-start">
-            <p className="mb-4 font-medium md:text-xl">
+            <p className="mb-4 text-sm font-medium md:text-xl">
               University of the People
             </p>
             <p className="mb-4 flex items-center justify-between text-sm md:text-lg">
-              <span className="dark:text-text-light-dark text-sm text-text-light md:text-base">
+              <span className="text-sm text-text-light dark:text-text-light-dark md:text-base">
                 Graduation:
               </span>
-              <span className="hover:text-brand-primary-dark rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary">
+              <span className="rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary hover:text-brand-primary-dark">
                 2026
               </span>
             </p>
             <p className="mb-4 flex items-center justify-between text-sm md:text-lg">
               <span className={leftSpanStyles}>CGPA:</span>
-              <span className="hover:text-brand-primary-dark rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary">
+              <span className="rounded-md bg-text-light p-1 text-xs font-extrabold text-brand-secondary transition duration-300 hover:bg-brand-primary hover:text-brand-primary-dark">
                 3.98
               </span>
             </p>
           </div>
-          <div className="flex flex-col items-start gap-2">
-            <p className="mb-4 font-medium md:text-xl">
+          <div className="flex flex-col items-start gap-2 lg:gap-4">
+            <p className="font-medium md:text-xl">
               Computer Science & Engineering.
             </p>
-            <p className="dark:text-text-light-dark text-text-light">
+            <p className="text-text-light dark:text-text-light-dark">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
               dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar
               quisque sed amet, nulla nunc. Eleifend sodales posuere fusce

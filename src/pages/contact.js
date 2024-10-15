@@ -4,19 +4,19 @@ function contact() {
   const listStyles =
     "dark:bg-brand-primary-dark flex w-full flex-col items-center justify-center gap-7 rounded-md bg-brand-secondary p-8 transition-all duration-1000 dark:text-brand-secondary";
   return (
-    <main className="grid grid-cols-[3fr_2fr] gap-6 pb-10 pt-8">
-      <div className="flex flex-col gap-12">
-        <p className="z-10 w-[300px] text-xl font-extrabold md:text-2xl">
+    <main className="grid grid-cols-1 gap-6 overflow-y-scroll p-5 pt-8 scrollbar lg:grid-cols-[3fr_2fr] lg:overflow-visible lg:pb-10">
+      <div className="flex flex-col gap-4 lg:gap-12">
+        <p className="text-center text-xl font-extrabold md:text-2xl">
           Please Leave Me Your Info
         </p>
         <ContactForm />
       </div>
-      <div className="flex flex-col gap-12">
-        <p className="z-10 w-[200px] text-xl font-extrabold md:text-2xl">
+      <div className="flex flex-col gap-4 lg:gap-12">
+        <p className="text-center text-xl font-extrabold md:text-2xl">
           Contact Information
         </p>
         <ul className="flex flex-col items-center gap-4 md:gap-5 lg:gap-6">
-          <li className="dark:bg-brand-primary-dark flex w-full flex-col items-center justify-center gap-7 rounded-md bg-brand-secondary p-8 transition-all duration-1000 dark:text-brand-secondary">
+          <li className="flex w-full flex-col items-center justify-center gap-7 rounded-md bg-brand-secondary p-8 transition-all duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary transition-all duration-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ function contact() {
             <div className="flex w-full flex-col gap-2">
               <p className="flex flex-row justify-between">
                 <span className="font-medium">Country: </span>
-                <span className="flex items-center gap-1 text-text-light">
+                <span className="flex items-center gap-1 text-text-light dark:text-text-light-dark">
                   Bangladesh
                   <span>
                     <img
@@ -48,20 +48,20 @@ function contact() {
 
               <p className="flex flex-row justify-between">
                 <span className="font-medium">City: </span>
-                <span className="flex items-center gap-1 text-text-light">
+                <span className="flex items-center gap-1 text-text-light dark:text-text-light-dark">
                   Dhaka
                 </span>
               </p>
 
               <p className="flex flex-row justify-between">
                 <span className="font-medium">Street: </span>
-                <span className="flex items-center gap-1 text-text-light">
+                <span className="flex items-center gap-1 text-text-light dark:text-text-light-dark">
                   Road-5/1, Titas road
                 </span>
               </p>
               <p className="flex flex-row justify-between">
                 <span className="font-medium">Postal Code: </span>
-                <span className="flex items-center gap-1 text-text-light">
+                <span className="flex items-center gap-1 text-text-light dark:text-text-light-dark">
                   1219
                 </span>
               </p>
@@ -84,14 +84,14 @@ function contact() {
             <div className="flex w-full flex-col gap-2">
               <p className="flex flex-row justify-between">
                 <span className="font-medium">Email: </span>
-                <span className="flex items-center gap-1 text-text-light">
+                <span className="flex items-center gap-1 text-text-light dark:text-text-light-dark">
                   rahimsheikh05@gmail.com
                 </span>
               </p>
 
               <p className="flex flex-row justify-between">
                 <span className="font-medium">Telegram: </span>
-                <span className="flex items-center gap-1 text-text-light">
+                <span className="flex items-center gap-1 text-text-light dark:text-text-light-dark">
                   @m3tal10
                 </span>
               </p>
@@ -117,7 +117,7 @@ function contact() {
             <div className="flex w-full flex-col gap-2">
               <p className="flex flex-row justify-between">
                 <span className="font-medium">Office: </span>
-                <span className="flex items-center gap-1 text-text-light">
+                <span className="flex items-center gap-1 text-text-light dark:text-text-light-dark">
                   <span>
                     <img
                       src="/Icons/Flag_of_Bangladesh.svg"
@@ -131,7 +131,7 @@ function contact() {
 
               <p className="flex flex-row justify-between">
                 <span className="font-medium">Personal: </span>
-                <span className="flex items-center gap-1 text-text-light">
+                <span className="flex items-center gap-1 text-text-light dark:text-text-light-dark">
                   <span>
                     <img
                       src="/Icons/Flag_of_Bangladesh.svg"

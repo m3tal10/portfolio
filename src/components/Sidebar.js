@@ -12,19 +12,19 @@ function Sidebar() {
   const skillIconStyle = "cursor-pointer border border-brand-primary p-2";
 
   return (
-    <div className="dark:bg-brand-primary-dark fixed left-0 top-0 h-screen w-[305px] bg-stone-100 transition-colors duration-1000 dark:text-brand-secondary">
+    <div className="fixed left-0 top-0 hidden h-screen w-[305px] bg-stone-100 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:block">
       {/* <div className="fixed left-0 top-0 flex max-w-[305px] flex-col items-center gap-24 overflow-y-scroll bg-stone-100 px-12 py-14 scrollbar dark:bg-stone-900"> */}
-      <div className="flex h-full flex-col items-center gap-24 overflow-y-scroll px-8 py-14 scrollbar">
+      <div className="flex h-full flex-col items-center gap-24 overflow-y-scroll px-4 py-14 scrollbar">
         <div className="flex w-full flex-col items-center justify-center">
           <img
-            className="bg-profile-back rounded-full"
+            className="rounded-full bg-profile-back"
             src="/images/profile1.png"
             alt=""
             height="150px"
             width="150px"
           />
           <p className="mt-8 text-xl font-medium">Mashrafie Rahim Sheikh</p>
-          <p className="dark:text-text-light-dark mt-4 text-text-light">
+          <p className="mt-4 text-text-light dark:text-text-light-dark">
             Full-stack Developer
           </p>
           <ul className="mt-4 flex gap-4">
@@ -524,20 +524,22 @@ function Sidebar() {
           </ul>
         </div>
         {/* Info section */}
-        <div className="dark:text-brand-primary-dark flex w-full flex-col gap-3 border-t-2 pt-20">
-          <p className="flex items-center justify-between text-lg">
+        <div className="flex w-full flex-col gap-3 border-t-2 pt-20 dark:text-brand-primary-dark">
+          <p className="flex items-center justify-between text-base">
             <span className="bg-brand-primary px-2">Age :</span>
-            <span className="rounded-md bg-slate-200">24</span>
+            <span className="rounded-md bg-slate-200 px-2">24</span>
           </p>
-          <p className="flex items-center justify-between text-lg">
+          <p className="flex items-center justify-between text-base">
             <span className="bg-brand-primary px-2">Residence :</span>
             <span className="w-6">
               <img src="/Icons/Flag_of_Bangladesh.svg" alt="Bangladesh Flag" />
             </span>
           </p>
-          <p className="flex items-center justify-between text-lg">
+          <p className="flex items-center justify-between text-base">
             <span className="bg-brand-primary px-2">Address :</span>
-            <span className="rounded-md bg-slate-200">Dhaka, Bangladesh</span>
+            <span className="rounded-md bg-slate-200 px-2">
+              Dhaka, Bangladesh
+            </span>
           </p>
         </div>
         {/* BUTTON */}

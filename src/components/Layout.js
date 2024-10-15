@@ -13,13 +13,13 @@ function Layout({ children }) {
 
   return (
     <div
-      className={` ${darkMode ? "dark" : ""} ${inter.variable} text-brand-primary-dark grid h-screen grid-cols-[305px_1fr_108px] gap-7 font-sans text-sm`}
+      className={` ${darkMode ? "dark" : ""} ${inter.variable} grid h-screen grid-rows-[100px_1fr] gap-7 font-sans text-sm text-brand-primary-dark lg:grid-cols-[305px_1fr_108px] lg:grid-rows-none`}
     >
       <div className=""></div>
       <Sidebar />
       {children}
       <Navbar />
-      <div></div>
+      <div className="hidden lg:block"></div>
     </div>
   );
 }
