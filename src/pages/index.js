@@ -4,7 +4,10 @@ import Square from "@/ui/shapes/Square";
 import Triangle from "@/ui/shapes/Triangle";
 
 export default function Home() {
-  const shapeStyles = "absolute transition-all duration-1000 hover:rotate-180";
+  const shapeStyles =
+    "absolute transition-all duration-1000 hover:animate-spin";
+  const RoundShapeStyles =
+    "absolute transition-all duration-1000 hover:animate-bounce";
   const serviceListStyles =
     "flex flex-col items-center gap-4 bg-brand-secondary px-4 py-4 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:p-8";
   const servicesPstyle1 = "text-center text-sm font-medium lg:text-lg";
@@ -28,7 +31,7 @@ export default function Home() {
         </div>
 
         {/* Shapes Background */}
-        <span className={`${shapeStyles} left-[10%] top-[15%]`}>
+        <span className={`${RoundShapeStyles} left-[10%] top-[15%]`}>
           {" "}
           <Circle />{" "}
         </span>
@@ -48,11 +51,11 @@ export default function Home() {
           {" "}
           <Triangle />{" "}
         </span>
-        <span className={`${shapeStyles} left-[40%] top-[60%]`}>
+        <span className={`${RoundShapeStyles} left-[40%] top-[60%]`}>
           {" "}
           <Circle />{" "}
         </span>
-        <span className={`${shapeStyles} left-[60%] top-[70%]`}>
+        <span className={`${RoundShapeStyles} left-[60%] top-[70%]`}>
           {" "}
           <Circle />{" "}
         </span>
