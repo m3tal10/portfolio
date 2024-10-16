@@ -1,12 +1,37 @@
 import "@/styles/globals.css";
 import Layout from "@/components/Layout";
 import DarkModeProvider from "@/contextAPI/DarkModeProvider";
+import { useRouter } from "next/router";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+
   return (
     <DarkModeProvider>
       <Layout>
-        <Component {...pageProps} />
+        <AnimatePresence mode="wait">
+          <motion.div key={router.pathname}>
+            <motion.div
+              className="absolute left-0 top-0 z-10 h-full w-full origin-bottom bg-yellow-500"
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 0 }}
+              exit={{ scaleY: 1 }}
+              transition={{ duration: 1 }}
+            ></motion.div>
+            <Component {...pageProps} />
+
+            <motion.div
+              className="absolute left-0 top-0 z-10 h-full w-full origin-top bg-yellow-500"
+              initial={{
+                scaleY: 1,
+              }}
+              animate={{ scaleY: 0 }}
+              exit={{ scaleY: 0 }}
+              transition={{ duration: 1 }}
+            ></motion.div>
+          </motion.div>
+        </AnimatePresence>
       </Layout>
     </DarkModeProvider>
   );

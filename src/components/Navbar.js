@@ -9,7 +9,6 @@ function Navbar() {
     console.log("hii");
     return href === path;
   };
-  console.log(path);
 
   const navListStyle =
     "flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:bg-brand-primary";
@@ -23,7 +22,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="bg fixed flex w-screen flex-row items-center justify-between bg-brand-secondary px-4 py-8 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:bottom-0 lg:right-0 lg:h-full lg:w-auto lg:flex-col lg:justify-between lg:px-8 lg:py-14">
+    <nav className="bg fixed z-20 flex w-screen flex-row items-center justify-between bg-brand-secondary px-4 py-8 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:bottom-0 lg:right-0 lg:h-full lg:w-auto lg:flex-col lg:justify-between lg:px-8 lg:py-14">
       <Link href="/about-me" className="">
         <img
           src="/images/profile1.png"

@@ -12,7 +12,7 @@ function Sidebar() {
   const skillIconStyle = "cursor-pointer border border-brand-primary p-2";
 
   return (
-    <div className="fixed left-0 top-0 hidden h-screen w-[305px] bg-stone-100 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:block">
+    <div className="fixed left-0 top-0 z-20 hidden h-screen w-[305px] bg-stone-100 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:block">
       {/* <div className="fixed left-0 top-0 flex max-w-[305px] flex-col items-center gap-24 overflow-y-scroll bg-stone-100 px-12 py-14 scrollbar dark:bg-stone-900"> */}
       <div className="flex h-full flex-col items-center gap-24 overflow-y-scroll px-4 py-14 scrollbar">
         <div className="flex w-full flex-col items-center justify-center">

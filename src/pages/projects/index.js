@@ -9,7 +9,7 @@ function projects() {
         Projects
       </p>
 
-      <ul className="grid grid-cols-2 gap-6 p-3 lg:grid-cols-3 lg:p-0">
+      <ul className="grid grid-cols-2 gap-6 p-3 lg:p-0">
         <ProjectItem />
         <ProjectItem />
         <ProjectItem />

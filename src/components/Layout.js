@@ -2,6 +2,7 @@ import { useDarkMode } from "@/contextAPI/DarkModeProvider";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import { Inter } from "@next/font/google";
+import { AnimatePresence, motion } from "framer-motion";
 
 const inter = Inter({
   subsets: ["latin"],
