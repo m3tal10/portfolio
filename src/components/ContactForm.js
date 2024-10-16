@@ -11,13 +11,12 @@ function ContactForm() {
   const inputStyles = "bg-bgcolor rounded-md p-3";
 
   function onSubmit(data) {
-    console.log(data);
     return;
   }
 
   return (
     <form
-      className="dark:bg-brand-primary-dark flex flex-col gap-6 rounded-md bg-brand-secondary p-8 text-text-light transition-all duration-1000 dark:text-brand-secondary"
+      className="flex flex-col gap-6 rounded-md bg-brand-secondary p-8 text-text-light transition-all duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="flex flex-col gap-1">
@@ -25,7 +24,7 @@ function ContactForm() {
           Full Name(Required)
         </label>
         <input
-          className="bg-bgcolor rounded-md p-3"
+          className="rounded-md bg-bgcolor p-3"
           type="text"
           id="fullName"
           placeholder="Full Name"

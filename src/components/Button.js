@@ -1,11 +1,16 @@
-import { useDarkMode } from "@/contextAPI/DarkModeProvider";
+import { motion } from "framer-motion";
 
 function Button({ children }) {
   // const { darkMode } = useDarkMode();
   return (
-    <button className="dark:text-brand-primary-dark bg-brand-primary px-10 py-3 font-semibold shadow-md transition-all duration-300 hover:bg-brand-primary hover:shadow-lg">
+    <motion.button
+      whileHover={{
+        scale: 1.06,
+      }}
+      className="bg-brand-primary px-10 py-3 font-semibold text-brand-primary-dark shadow-md"
+    >
       {children}
-    </button>
+    </motion.button>
   );
 }
 

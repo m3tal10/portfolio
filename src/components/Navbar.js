@@ -1,20 +1,20 @@
 import { useDarkMode } from "@/contextAPI/DarkModeProvider";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 function Navbar() {
   const { darkMode, setDarkMode } = useDarkMode();
   const path = usePathname();
   const isActive = (href) => {
-    console.log("hii");
     return href === path;
   };
 
   const navListStyle =
-    "flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:bg-brand-primary";
+    "group flex h-10 w-10 items-center justify-center rounded-full hover:bg-brand-primary dark:bg-brand-primary-dark dark:hover:bg-brand-primary";
 
   const navIconStyle =
-    "h-full w-full p-2 transition-all duration-300 hover:fill-brand-primary-dark";
+    "h-full w-full p-2 transition-all duration-300 group-hover:fill-brand-primary-dark";
 
   function handleDarkModeToggle() {
     setDarkMode((dark) => !dark);
@@ -22,9 +22,12 @@ function Navbar() {
   }
 
   return (
-    <nav className="bg fixed z-20 flex w-screen flex-row items-center justify-between bg-brand-secondary px-4 py-8 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:bottom-0 lg:right-0 lg:h-full lg:w-auto lg:flex-col lg:justify-between lg:px-8 lg:py-14">
+    <nav className="bg fixed z-20 flex w-screen flex-row items-center justify-between bg-brand-secondary px-4 py-8 transition-colors duration-1000 dark:bg-brand-primary-dark lg:bottom-0 lg:right-0 lg:h-full lg:w-auto lg:flex-col lg:justify-between lg:px-8 lg:py-14">
       <Link href="/about-me" className="">
-        <img
+        <motion.img
+          whileHover={{
+            scale: 1.1,
+          }}
           src="/images/profile1.png"
           alt="mashrafie-photo"
           width="40px"
@@ -35,14 +38,17 @@ function Navbar() {
       <ul className="flex flex-row items-center justify-between gap-6 rounded-md border border-brand-primary p-2 lg:flex-col lg:gap-10">
         {/* Home Icon*/}
         <Link href="/" className="">
-          <li
-            className={`flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-primary ${isActive("/") ? "bg-brand-primary" : "bg-brand-secondary"}`}
+          <motion.li
+            whileHover={{
+              scale: 1.1,
+            }}
+            className={`group flex h-10 w-10 items-center justify-center rounded-full hover:bg-brand-primary dark:bg-brand-primary-dark dark:hover:bg-brand-primary ${isActive("/") ? "bg-brand-primary dark:bg-brand-primary" : "bg-brand-secondary"}`}
           >
             <svg
               viewBox="0 0 18 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className={`h-full w-full ${isActive("/") ? "fill-brand-primary-dark" : "fill-text-light"} p-2 transition-all duration-200 hover:fill-brand-primary-dark`}
+              className={`h-full w-full p-2 transition-all duration-300 group-hover:fill-brand-primary-dark ${isActive("/") ? "fill-brand-primary-dark dark:fill-brand-primary-dark" : "fill-text-light dark:fill-brand-secondary"} `}
             >
               <g clipPath="url(#clip0_3_204)">
                 <path d="M15 14.9999C15 15.1989 14.921 15.3896 14.7803 15.5303C14.6397 15.6709 14.4489 15.7499 14.25 15.7499H3.75C3.55109 15.7499 3.36032 15.6709 3.21967 15.5303C3.07902 15.3896 3 15.1989 3 14.9999V8.24994H0.75L8.49525 1.20894C8.63333 1.0833 8.81331 1.01367 9 1.01367C9.18669 1.01367 9.36667 1.0833 9.50475 1.20894L17.25 8.24994H15V14.9999Z" />
@@ -53,7 +59,7 @@ function Navbar() {
                 </clipPath>
               </defs>
             </svg>
-          </li>
+          </motion.li>
         </Link>
         {/* Services Icon  */}
 
@@ -84,8 +90,11 @@ function Navbar() {
         </li> */}
         {/* Education Icon*/}
         <Link href="education">
-          <li
-            className={`${navListStyle} ${isActive("/education") ? "bg-brand-primary" : "bg-brand-secondary"}`}
+          <motion.li
+            whileHover={{
+              scale: 1.1,
+            }}
+            className={`${navListStyle} ${isActive("/education") ? "bg-brand-primary dark:bg-brand-primary" : "bg-brand-secondary"}`}
           >
             <svg
               width="18"
@@ -93,7 +102,7 @@ function Navbar() {
               viewBox="0 0 18 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className={`${navIconStyle} ${isActive("/education") ? "fill-brand-primary-dark" : "fill-text-light"}`}
+              className={`${navIconStyle} ${isActive("/education") ? "fill-brand-primary-dark dark:fill-brand-primary-dark" : "fill-text-light dark:fill-brand-secondary"}`}
             >
               <g clipPath="url(#clip0_3_219)">
                 <path d="M12.7636 11.272L9.25 14.6259L5.73638 11.272C3.10301 11.381 1 13.4376 1 15.9759V16.3134C1 17.245 1.79185 18.0009 2.76786 18.0009H15.7321C16.7081 18.0009 17.5 17.245 17.5 16.3134V15.9759C17.5 13.4376 15.397 11.381 12.7636 11.272ZM1.50089 2.80635L1.73661 2.85909V4.91221C1.47879 5.05987 1.29464 5.31651 1.29464 5.62589C1.29464 5.9212 1.46406 6.16729 1.70346 6.31846L1.12891 8.5087C1.06629 8.75128 1.20625 9.00089 1.40882 9.00089H2.94833C3.15089 9.00089 3.29085 8.75128 3.22824 8.5087L2.65368 6.31846C2.89308 6.16729 3.0625 5.9212 3.0625 5.62589C3.0625 5.31651 2.87835 5.05987 2.62054 4.91221V3.06299L5.05134 3.62198C4.7346 4.22667 4.53571 4.90167 4.53571 5.62589C4.53571 8.11143 6.64609 10.1259 9.25 10.1259C11.8539 10.1259 13.9643 8.11143 13.9643 5.62589C13.9643 4.90167 13.7691 4.22667 13.4487 3.62198L16.9954 2.80635C17.6657 2.65166 17.6657 1.85362 16.9954 1.69893L9.98292 0.0817384C9.50413 -0.0272461 8.99955 -0.0272461 8.52076 0.0817384L1.50089 1.69541C0.834263 1.8501 0.834263 2.65166 1.50089 2.80635Z" />
@@ -104,12 +113,15 @@ function Navbar() {
                 </clipPath>
               </defs>
             </svg>
-          </li>
+          </motion.li>
         </Link>
         {/* Portfolio Icon */}
         <Link href="projects">
-          <li
-            className={`${navListStyle} ${isActive("/projects") ? "bg-brand-primary" : "bg-brand-secondary"}`}
+          <motion.li
+            whileHover={{
+              scale: 1.1,
+            }}
+            className={`${navListStyle} ${isActive("/projects") ? "bg-brand-primary dark:bg-brand-primary" : "bg-brand-secondary"}`}
           >
             <svg
               width="18"
@@ -117,7 +129,7 @@ function Navbar() {
               viewBox="0 0 18 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className={`${navIconStyle} ${isActive("/projects") ? "fill-brand-primary-dark" : "fill-text-light"}`}
+              className={`${navIconStyle} ${isActive("/projects") ? "fill-brand-primary-dark dark:fill-brand-primary-dark" : "fill-text-light dark:fill-brand-secondary"}`}
             >
               <g clipPath="url(#clip0_3_207)">
                 <path d="M6.75 9.75V12H11.25V9.75H16.5V15C16.5 15.1989 16.421 15.3897 16.2803 15.5303C16.1397 15.671 15.9489 15.75 15.75 15.75H2.25C2.05109 15.75 1.86032 15.671 1.71967 15.5303C1.57902 15.3897 1.5 15.1989 1.5 15V9.75H6.75ZM8.25 8.25H9.75V10.5H8.25V8.25ZM5.25 3.75V1.5C5.25 1.30109 5.32902 1.11032 5.46967 0.96967C5.61032 0.829018 5.80109 0.75 6 0.75H12C12.1989 0.75 12.3897 0.829018 12.5303 0.96967C12.671 1.11032 12.75 1.30109 12.75 1.5V3.75H15.75C15.9489 3.75 16.1397 3.82902 16.2803 3.96967C16.421 4.11032 16.5 4.30109 16.5 4.5V8.25H11.25V6.75H6.75V8.25H1.5V4.5C1.5 4.30109 1.57902 4.11032 1.71967 3.96967C1.86032 3.82902 2.05109 3.75 2.25 3.75H5.25ZM6.75 2.25V3.75H11.25V2.25H6.75Z" />
@@ -128,12 +140,15 @@ function Navbar() {
                 </clipPath>
               </defs>
             </svg>
-          </li>
+          </motion.li>
         </Link>
         {/* Contact Icon */}
         <Link href="contact">
-          <li
-            className={`${navListStyle} ${isActive("/contact") ? "bg-brand-primary" : "bg-brand-secondary"}`}
+          <motion.li
+            whileHover={{
+              scale: 1.1,
+            }}
+            className={`${navListStyle} ${isActive("/contact") ? "bg-brand-primary dark:bg-brand-primary" : "bg-brand-secondary"}`}
           >
             <svg
               width="18"
@@ -141,7 +156,7 @@ function Navbar() {
               viewBox="0 0 18 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className={`${navIconStyle} ${isActive("/contact") ? "fill-brand-primary-dark" : "fill-text-light"}`}
+              className={`${navIconStyle} ${isActive("/contact") ? "fill-brand-primary-dark dark:fill-brand-primary-dark" : "fill-text-light dark:fill-brand-secondary"}`}
             >
               <g clipPath="url(#clip0_3_213)">
                 <path d="M4.84125 14.25L1.5 16.875V3C1.5 2.80109 1.57902 2.61032 1.71967 2.46967C1.86032 2.32902 2.05109 2.25 2.25 2.25H15.75C15.9489 2.25 16.1397 2.32902 16.2803 2.46967C16.421 2.61032 16.5 2.80109 16.5 3V13.5C16.5 13.6989 16.421 13.8897 16.2803 14.0303C16.1397 14.171 15.9489 14.25 15.75 14.25H4.84125Z" />
@@ -152,27 +167,30 @@ function Navbar() {
                 </clipPath>
               </defs>
             </svg>
-          </li>
+          </motion.li>
         </Link>
       </ul>
 
-      <button
+      <motion.button
+        whileHover={{
+          scale: 1.1,
+          rotate: 360,
+        }}
+        transition={{
+          rotate: { duration: 1.3 },
+        }}
         onClick={handleDarkModeToggle}
-        className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-1000 dark:bg-text-light dark:hover:bg-brand-primary`}
+        className={`group flex h-10 w-10 items-center justify-center rounded-full dark:bg-brand-primary-dark dark:hover:bg-brand-primary`}
       >
         {darkMode ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6"
-            className={`fill-text-light transition duration-1000 hover:rotate-180 hover:fill-brand-secondary`}
+            class="size-8"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+              className="fill-brand-secondary"
+              d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"
             />
           </svg>
         ) : (
@@ -181,7 +199,7 @@ function Navbar() {
             height="30"
             viewBox="0 0 30 30"
             xmlns="http://www.w3.org/2000/svg"
-            className={`fill-text-light transition-transform duration-1000 hover:rotate-180 hover:fill-brand-primary-dark`}
+            className={`fill-text-light hover:fill-brand-primary-dark`}
           >
             <g clipPath="url(#clip0_3_100)">
               <path d="M15.5 27C8.59625 27 3 21.4037 3 14.5C3 7.59625 8.59625 2 15.5 2C22.4037 2 28 7.59625 28 14.5C28 21.4037 22.4037 27 15.5 27ZM7.16125 20.0312C7.98286 21.2605 9.06683 22.2923 10.3351 23.0523C11.6034 23.8123 13.0245 24.2816 14.4959 24.4264C15.9674 24.5712 17.4526 24.3879 18.8448 23.8897C20.2369 23.3915 21.5012 22.5908 22.5466 21.5452C23.5921 20.4997 24.3927 19.2353 24.8908 17.8432C25.3888 16.451 25.572 14.9657 25.4271 13.4943C25.2822 12.0228 24.8127 10.6018 24.0526 9.3336C23.2925 8.06538 22.2606 6.98149 21.0312 6.16C21.5702 8.08278 21.5875 10.1144 21.0814 12.0461C20.5752 13.9778 19.5639 15.7398 18.1513 17.1513C16.74 18.5637 14.9781 19.5749 13.0467 20.081C11.1152 20.5872 9.08385 20.57 7.16125 20.0312Z" />
@@ -193,7 +211,7 @@ function Navbar() {
             </defs>
           </svg>
         )}
-      </button>
+      </motion.button>
     </nav>
   );
 }

@@ -1,10 +1,10 @@
 import ContactForm from "@/components/ContactForm";
-
+import { motion } from "framer-motion";
 function contact() {
   const listStyles =
-    "dark:bg-brand-primary-dark flex w-full flex-col items-center justify-center gap-7 rounded-md bg-brand-secondary p-8 transition-all duration-1000 dark:text-brand-secondary";
+    "flex w-full flex-col items-center justify-center gap-7 rounded-md bg-brand-secondary p-8 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary";
   return (
-    <main className="grid grid-cols-1 gap-6 overflow-y-scroll p-5 pt-8 scrollbar lg:grid-cols-[3fr_2fr] lg:overflow-visible lg:pb-10">
+    <main className="grid grid-cols-1 gap-6 overflow-y-scroll p-5 pt-8 scrollbar dark:text-brand-secondary lg:grid-cols-[3fr_2fr] lg:overflow-visible lg:pb-10">
       <div className="flex flex-col gap-4 lg:gap-12">
         <p className="text-center text-xl font-extrabold md:text-2xl">
           Please Leave Me Your Info
@@ -16,8 +16,13 @@ function contact() {
           Contact Information
         </p>
         <ul className="flex flex-col items-center gap-4 md:gap-5 lg:gap-6">
-          <li className="flex w-full flex-col items-center justify-center gap-7 rounded-md bg-brand-secondary p-8 transition-all duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary transition-all duration-200">
+          <motion.li
+            whileHover={{
+              scale: 1.05,
+            }}
+            className="flex w-full flex-col items-center justify-center gap-7 rounded-md bg-brand-secondary p-8 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary"
+          >
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -66,11 +71,16 @@ function contact() {
                 </span>
               </p>
             </div>
-          </li>
+          </motion.li>
 
           {/* Email */}
-          <li className={listStyles}>
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary transition-all duration-200">
+          <motion.li
+            whileHover={{
+              scale: 1.05,
+            }}
+            className={listStyles}
+          >
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -96,11 +106,16 @@ function contact() {
                 </span>
               </p>
             </div>
-          </li>
+          </motion.li>
 
           {/* Phone no */}
-          <li className={listStyles}>
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary transition-all duration-200">
+          <motion.li
+            whileHover={{
+              scale: 1.05,
+            }}
+            className={listStyles}
+          >
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -143,7 +158,7 @@ function contact() {
                 </span>
               </p>
             </div>
-          </li>
+          </motion.li>
         </ul>
       </div>
     </main>

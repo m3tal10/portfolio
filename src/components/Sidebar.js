@@ -1,15 +1,18 @@
 import Button from "@/components/Button";
 import { useDarkMode } from "@/contextAPI/DarkModeProvider";
-
+import { motion } from "framer-motion";
 /* eslint-disable @next/next/no-img-element */
 function Sidebar() {
   const { darkMode } = useDarkMode();
   const listStyle =
-    "flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 transition-all duration-300 hover:bg-brand-primary";
+    "group flex h-10 w-10 items-center justify-center rounded-full bg-brand-secondary hover:bg-brand-primary dark:bg-brand-primary-dark dark:hover:bg-brand-primary";
 
   const listIconStyle =
-    "h-full w-full fill-text-light p-2 transition-all duration-300";
+    "h-full w-full fill-text-light p-2 transition-all duration-300 dark:fill-text-light-dark";
   const skillIconStyle = "cursor-pointer border border-brand-primary p-2";
+  const skillsHover = {
+    scale: 1.05,
+  };
 
   return (
     <div className="fixed left-0 top-0 z-20 hidden h-screen w-[305px] bg-stone-100 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:block">
@@ -29,19 +32,29 @@ function Sidebar() {
           </p>
           <ul className="mt-4 flex gap-4">
             {/* LINKEDIN */}
-            <li className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 transition-all duration-300 hover:bg-brand-primary">
+            <motion.li
+              whileHover={{
+                scale: 1.1,
+              }}
+              className="group flex h-10 w-10 items-center justify-center rounded-full bg-brand-secondary hover:bg-brand-primary dark:bg-brand-primary-dark dark:hover:bg-brand-primary"
+            >
               <svg
                 viewBox="0 0 128 128"
-                className={`${listIconStyle} hover:fill-blue-700`}
+                className={`${listIconStyle} group-hover:fill-blue-700`}
               >
                 <path d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3zM39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1110.49-10.5 10.5 10.5 0 01-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z"></path>
               </svg>
-            </li>
+            </motion.li>
             {/* GITHUB */}
-            <li className={`${listStyle}`}>
+            <motion.li
+              whileHover={{
+                scale: 1.1,
+              }}
+              className={`${listStyle}`}
+            >
               <svg
                 viewBox="0 0 128 128"
-                className={`${listIconStyle} hover:fill-brand-primary-dark`}
+                className={`${listIconStyle} hover:fill-brand-primary-dark dark:hover:fill-brand-primary-dark`}
               >
                 <g>
                   <path
@@ -52,12 +65,17 @@ function Sidebar() {
                   <path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"></path>
                 </g>
               </svg>
-            </li>
+            </motion.li>
             {/* FACEBOOK */}
-            <li className={`${listStyle}`}>
+            <motion.li
+              whileHover={{
+                scale: 1.1,
+              }}
+              className={`${listStyle}`}
+            >
               <svg
                 viewBox="0 0 128 128"
-                className={`${listIconStyle} hover:fill-blue-700`}
+                className={`${listIconStyle} group-hover:fill-blue-700`}
               >
                 <rect
                   x="4.83"
@@ -68,11 +86,12 @@ function Sidebar() {
                   ry="6.53"
                 ></rect>
                 <path
-                  fill="#fff"
+                  // fill={`${darkMode ? "#082f49" : "#f5f5f4"}`}
+                  className="fill-brand-secondary group-hover:fill-brand-secondary dark:fill-brand-primary-dark"
                   d="M86.48 123.17V77.34h15.38l2.3-17.86H86.48v-11.4c0-5.17 1.44-8.7 8.85-8.7h9.46v-16A126.56 126.56 0 0091 22.7c-13.62 0-23 8.3-23 23.61v13.17H52.62v17.86H68v45.83z"
                 ></path>
               </svg>
-            </li>
+            </motion.li>
           </ul>
         </div>
         {/* Skills */}
@@ -80,7 +99,12 @@ function Sidebar() {
           <p className="text-xl font-medium">SKILLS</p>
           <ul className="grid grid-cols-[1fr_1fr_1fr_1fr] gap-1">
             {/* HTML */}
-            <li className="cursor-pointer border border-brand-primary p-2">
+            <motion.li
+              whileHover={{
+                scale: 1.05,
+              }}
+              className="cursor-pointer border border-brand-primary p-2"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 128 128"
@@ -110,9 +134,9 @@ function Sidebar() {
                   d="M63.962 66.978v11.063h13.624L76.302 92.39l-12.34 3.331v11.51l22.682-6.286.166-1.87 2.6-29.127.27-2.97h-2.982zm0-22.395v11.064h26.725l.221-2.487.505-5.608.265-2.969z"
                 />
               </svg>
-            </li>
+            </motion.li>
             {/* CSS */}
-            <li className={skillIconStyle}>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <script xmlns="" id="nimlmejbmnecnaghgmbahmbaddhjbecg" />
                 <script xmlns="" />
@@ -146,9 +170,9 @@ function Sidebar() {
                   d="M64.039 43.677v11.137H37.136l-.224-2.503-.507-5.646-.267-2.988h27.901zM64 66.221v11.138H51.753l-.223-2.503-.508-5.647-.267-2.988H64z"
                 />
               </svg>
-            </li>
+            </motion.li>
             {/* JAVSCRIPT */}
-            <li className={skillIconStyle}>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <script xmlns="" id="nimlmejbmnecnaghgmbahmbaddhjbecg" />
                 <script xmlns="" />
@@ -159,9 +183,9 @@ function Sidebar() {
                   d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189 7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237z"
                 />
               </svg>
-            </li>
+            </motion.li>
             {/* PYTHON */}
-            <li className={skillIconStyle}>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <script xmlns="" id="nimlmejbmnecnaghgmbahmbaddhjbecg" />
                 <script xmlns="" />
@@ -181,17 +205,19 @@ function Sidebar() {
                   />
                 </g>
               </svg>
-            </li>
+            </motion.li>
             {/* REACTJS */}
-            <li className={skillIconStyle}>
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
-                alt="react-icon"
-              />
-            </li>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
+              <svg viewBox="0 0 128 128">
+                <g fill={darkMode ? `#f5f5f4` : `#082f49`}>
+                  <circle cx="64" cy="47.5" r="9.3"></circle>
+                  <path d="M64 81.7C71.3 88.8 78.5 93 84.3 93c1.9 0 3.7-.4 5.2-1.3 5.2-3 7.1-10.5 5.3-21.2-.3-1.9-.7-3.8-1.2-5.8 2-.6 3.8-1.2 5.6-1.8 10.1-3.9 15.7-9.3 15.7-15.2 0-6-5.6-11.4-15.7-15.2-1.8-.7-3.6-1.3-5.6-1.8.5-2 .9-3.9 1.2-5.8 1.7-10.9-.2-18.5-5.4-21.5-1.5-.9-3.3-1.3-5.2-1.3-5.7 0-13 4.2-20.3 11.3C56.7 6.3 49.5 2.1 43.7 2.1c-1.9 0-3.7.4-5.2 1.3-5.2 3-7.1 10.5-5.3 21.2.3 1.9.7 3.8 1.2 5.8-2 .6-3.8 1.2-5.6 1.8-10.1 3.9-15.7 9.3-15.7 15.2 0 6 5.6 11.4 15.7 15.2 1.8.7 3.6 1.3 5.6 1.8-.5 2-.9 3.9-1.2 5.8-1.7 10.7.2 18.3 5.3 21.2 1.5.9 3.3 1.3 5.2 1.3 5.8.2 13-4 20.3-11zm-5.6-13.5c1.8.1 3.7.1 5.6.1 1.9 0 3.8 0 5.6-.1-1.8 2.4-3.7 4.6-5.6 6.7-1.9-2.1-3.8-4.3-5.6-6.7zM46 57.9c1 1.7 1.9 3.3 3 4.9-3.1-.4-6-.9-8.8-1.5.9-2.7 1.9-5.5 3.1-8.3.8 1.6 1.7 3.3 2.7 4.9zm-5.8-24.1c2.8-.6 5.7-1.1 8.8-1.5-1 1.6-2 3.2-3 4.9-1 1.7-1.9 3.3-2.7 5-1.3-2.9-2.3-5.7-3.1-8.4zm5.5 13.7c1.3-2.7 2.7-5.4 4.3-8.1 1.5-2.6 3.2-5.2 4.9-7.8 3-.2 6-.3 9.1-.3 3.2 0 6.2.1 9.1.3 1.8 2.6 3.4 5.2 4.9 7.8 1.6 2.7 3 5.4 4.3 8.1-1.3 2.7-2.7 5.4-4.3 8.1-1.5 2.6-3.2 5.2-4.9 7.8-3 .2-6 .3-9.1.3-3.2 0-6.2-.1-9.1-.3-1.8-2.6-3.4-5.2-4.9-7.8-1.6-2.7-3-5.4-4.3-8.1zm39.1-5.4l-2.7-5c-1-1.7-1.9-3.3-3-4.9 3.1.4 6 .9 8.8 1.5-.9 2.8-1.9 5.6-3.1 8.4zm0 10.8c1.2 2.8 2.2 5.6 3.1 8.3-2.8.6-5.7 1.1-8.8 1.5 1-1.6 2-3.2 3-4.9.9-1.5 1.8-3.2 2.7-4.9zm2.3 34.7c-.8.5-1.8.7-2.9.7-4.9 0-11-4-17-10 2.9-3.1 5.7-6.6 8.5-10.5 4.7-.4 9.2-1.1 13.4-2.1.5 1.8.8 3.6 1.1 5.4 1.4 8.5.3 14.6-3.1 16.5zm5.2-52.7c11.2 3.2 17.9 8.1 17.9 12.6 0 3.9-4.6 7.8-12.7 10.9-1.6.6-3.4 1.2-5.2 1.7-1.3-4.1-2.9-8.3-4.9-12.6 2-4.3 3.7-8.5 4.9-12.6zm-8-28.2c1.1 0 2 .2 2.9.7 3.3 1.9 4.5 7.9 3.1 16.5-.3 1.7-.7 3.5-1.1 5.4-4.2-.9-8.7-1.6-13.4-2.1-2.7-3.9-5.6-7.4-8.5-10.5 6-5.9 12.1-10 17-10zM69.6 26.8c-1.8-.1-3.7-.1-5.6-.1s-3.8 0-5.6.1c1.8-2.4 3.7-4.6 5.6-6.7 1.9 2.1 3.8 4.4 5.6 6.7zM40.9 7.4c.8-.5 1.8-.7 2.9-.7 4.9 0 11 4 17 10-2.9 3.1-5.7 6.6-8.5 10.5-4.7.4-9.2 1.1-13.4 2.1-.5-1.8-.8-3.6-1.1-5.4-1.4-8.5-.3-14.5 3.1-16.5zm-5.2 52.7C24.5 56.9 17.8 52 17.8 47.5c0-3.9 4.6-7.8 12.7-10.9 1.6-.6 3.4-1.2 5.2-1.7 1.3 4.1 2.9 8.3 4.9 12.6-2 4.3-3.7 8.6-4.9 12.6zm2.1 11c.3-1.7.7-3.5 1.1-5.4 4.2.9 8.7 1.6 13.4 2.1 2.7 3.9 5.6 7.4 8.5 10.5-6 5.9-12.1 10-17 10-1.1 0-2-.2-2.9-.7-3.4-1.9-4.5-8-3.1-16.5zm-4.2 41.2c2.2-2.7 2.3-5.7 1.1-8.7-1.2-3-3.7-4.4-6.8-4.5-3.7-.1-7.5 0-11.2 0H16V125h3v-9.8h4.7c.6 0 1.1.2 1.4.7l6 9.3c.1.2.4.5.6.5h3.9c-2.4-3.7-4.7-7.2-7.1-10.8 2.1-.3 3.9-1 5.1-2.6zm-14.6-.2v-9.9h1.1c2.3 0 4.7-.1 7 .1 2.7.1 4.6 2.2 4.6 4.9s-2.2 4.8-4.9 4.9c-2.4.1-4.8 0-7.8 0zm38.7 1.3c-1.6-7-8-8.8-12.9-6.6-3.8 1.7-5.5 5-5.6 9.1-.1 3.1.8 5.9 3.2 8 2.7 2.4 6 2.7 9.4 2.1 1.9-.4 3.6-1.3 4.9-2.7-.5-.7-1-1.4-1.5-2-2.8 2.4-5.9 3.2-9.3 1.6-2.2-1.1-3.3-3.8-3.5-5.8h15.5v-1.3c.1-.9 0-1.7-.2-2.4zM42.6 115c-.3-3 2.7-6.2 6-6.2 3.8-.1 6.2 2.2 6.3 6.2H42.6zm30.7-8.7c-1.5-.3-3.1-.4-4.6-.3-2.4.2-4.5 1.3-6.2 3.1.5.7.9 1.4 1.5 2.2.2-.2.4-.4.6-.5 1.6-1.5 3.5-2.3 5.8-2.1 1.8.1 3.5.7 4 2.5.4 1.4.3 2.9.4 4.4-.3 0-.4-.1-.5-.2-2.4-2-5.1-2.4-8-1.7-2.7.7-4.4 2.8-4.6 5.5-.2 3.1 1.2 5.4 3.9 6.5 1.7.7 3.6.7 5.4.3 1.4-.3 2-1.1 4-2.2v1.3h2.8c0-4 .1-8.9 0-13.5 0-2.9-1.7-4.7-4.5-5.3zm1.4 12.6c-.1.3 0 .6 0 .9 0 2.1-.5 2.8-2.5 3.6-1.4.5-2.9.7-4.4.2-1.7-.5-2.9-2-2.9-3.7-.1-1.7 1-3.4 2.7-3.9 2.3-.8 4.4-.3 6.3 1.1.6.5 1 1 .8 1.8zm15.6-9.9c2.6-.8 5-.3 6.8 1.9l.3.2c.7-.6 1.3-1.2 2.1-1.9-.3-.3-.4-.5-.6-.8-2.9-3.1-8.6-3.5-12.1-1-4.9 3.6-4.8 10.6-2.4 14.3 2.3 3.5 5.6 4.7 9.5 4.2 2.3-.3 4.2-1.4 5.7-3.3-.7-.6-1.4-1.2-2.1-1.9-.2.2-.3.3-.4.5-2.7 3-7.2 2.7-9.6-.5-1.4-1.9-1.7-4.1-1.3-6.3.2-2.5 1.5-4.5 4.1-5.4zm20.8 13.6c-.2.1-.3.2-.3.2-.8.6-1.6.7-2.5.4-.9-.4-1-1.2-1.1-2v-11.4c0-.2 0 .2.1-.8h3.8v-3h-4v-5h-3v5.4h-2.6c-.2 0-.5.2-.5.4-.1.7 0 1.2 0 2.2h3.2v12.8c0 1.6.4 3 1.8 3.8 1.5.9 4.4.7 5.7-.4.2-.1.3-.5.3-.6-.3-.6-.6-1.3-.9-2z"></path>
+                </g>
+              </svg>
+            </motion.li>
 
             {/*  NEXTJS */}
-            <li className={skillIconStyle}>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <script xmlns="" id="nimlmejbmnecnaghgmbahmbaddhjbecg" />
                 <script xmlns="" />
@@ -201,10 +227,10 @@ function Sidebar() {
                   d="M0 51.098V76.86h4.422V56.604L20.73 76.87h27.694v-4.113H30.553v-6.801h14.37v-4.113h-14.37v-6.621h17.87v-4.116H26.13v4.116h.002V76.68L5.527 51.098H0zm85.09.01v4.115h9.03v21.65h4.42v-21.65h8.847v-4.116H85.09zm-31.322.011 20.73 25.764h5.803L69.936 64.01l10.35-12.871-5.79.01-7.459 9.261-7.48-9.29h-5.79zm70.158 14.598c-.761 0-1.445.128-2.051.394-.602.263-1.078.633-1.426 1.108-.35.476-.525 1.032-.525 1.664 0 .77.258 1.384.78 1.847.517.464 1.227.809 2.124 1.036l1.24.312a7.02 7.02 0 0 1 1.026.334 1.91 1.91 0 0 1 .683.461 1.034 1.034 0 0 1 .248.697 1.25 1.25 0 0 1-.283.803 1.77 1.77 0 0 1-.76.535 3.11 3.11 0 0 1-1.132.192 3.24 3.24 0 0 1-1.116-.182 1.902 1.902 0 0 1-.804-.557 1.63 1.63 0 0 1-.352-.931h-1.941c.027.71.216 1.316.566 1.812s.836.873 1.46 1.13c.62.26 1.357.39 2.202.39.875 0 1.619-.136 2.233-.4.617-.27 1.088-.643 1.414-1.118.327-.479.488-1.028.488-1.658 0-.466-.09-.872-.266-1.217a2.726 2.726 0 0 0-.72-.887 4.227 4.227 0 0 0-1.028-.607 7.09 7.09 0 0 0-1.19-.385l-1.02-.25a6.975 6.975 0 0 1-.667-.195 2.82 2.82 0 0 1-.597-.285 1.304 1.304 0 0 1-.43-.418 1.037 1.037 0 0 1-.158-.58 1.21 1.21 0 0 1 .238-.717c.156-.21.385-.376.678-.5a2.771 2.771 0 0 1 1.056-.184c.585 0 1.062.126 1.43.383a1.424 1.424 0 0 1 .623 1.07h1.9a2.775 2.775 0 0 0-.513-1.607c-.333-.466-.792-.833-1.377-1.096-.584-.265-1.26-.394-2.033-.394zm-7.998.144v7.55c-.003.377-.062.697-.176.954a1.25 1.25 0 0 1-.506.584c-.218.133-.488.2-.803.2-.29 0-.546-.057-.771-.17a1.247 1.247 0 0 1-.522-.481 1.474 1.474 0 0 1-.195-.75h-1.963c0 .661.147 1.213.447 1.656a2.768 2.768 0 0 0 1.211 1.002 4.22 4.22 0 0 0 1.72.34c.697 0 1.311-.134 1.835-.4a2.97 2.97 0 0 0 1.236-1.149c.293-.499.444-1.093.448-1.787v-7.549h-1.961zm-53.332.059-8.844 10.982h5.805l5.937-7.38-2.898-3.602zm45.785 8.498c-.324 0-.6.112-.83.336a1.07 1.07 0 0 0-.344.807 1.082 1.082 0 0 0 .344.818c.23.225.506.336.83.336a1.105 1.105 0 0 0 .574-.156c.177-.101.318-.24.428-.416a1.115 1.115 0 0 0 .166-.582 1.097 1.097 0 0 0-.354-.807 1.133 1.133 0 0 0-.814-.336z"
                 />
               </svg>
-            </li>
+            </motion.li>
 
             {/* NODE */}
-            <li className={skillIconStyle}>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <script xmlns="" id="nimlmejbmnecnaghgmbahmbaddhjbecg" />
                 <script xmlns="" />
@@ -275,10 +301,10 @@ function Sidebar() {
                   </linearGradient>
                 </defs>
               </svg>
-            </li>
+            </motion.li>
 
             {/* EXPRESS */}
-            <li className={skillIconStyle}>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <script xmlns="" id="nimlmejbmnecnaghgmbahmbaddhjbecg" />
                 <script xmlns="" />
@@ -288,10 +314,10 @@ function Sidebar() {
                   d="M126.67 98.44c-4.56 1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89 76 81.85 85.2 75.14 94.77c-2.4 3.42-4.92 4.91-9.4 3.7l26.92-36.13L67.6 29.71c4.31-.84 7.29-.41 9.93 3.45 5.83 8.52 12.26 16.63 18.67 25.21 6.45-8.55 12.8-16.67 18.8-25.11 2.41-3.42 5-4.72 9.33-3.46-3.28 4.35-6.49 8.63-9.72 12.88-4.36 5.73-8.64 11.53-13.16 17.14-1.61 2-1.35 3.3.09 5.19C109.9 76 118.16 87.1 126.67 98.44zM1.33 61.74c.72-3.61 1.2-7.29 2.2-10.83 6-21.43 30.6-30.34 47.5-17.06C60.93 41.64 63.39 52.62 62.9 65H7.1c-.84 22.21 15.15 35.62 35.53 28.78 7.15-2.4 11.36-8 13.47-15 1.07-3.51 2.84-4.06 6.14-3.06-1.69 8.76-5.52 16.08-13.52 20.66-12 6.86-29.13 4.64-38.14-4.89C5.26 85.89 3 78.92 2 71.39c-.15-1.2-.46-2.38-.7-3.57q.03-3.04.03-6.08zm5.87-1.49h50.43c-.33-16.06-10.33-27.47-24-27.57-15-.12-25.78 11.02-26.43 27.57z"
                 />
               </svg>
-            </li>
+            </motion.li>
 
             {/* MONGODB */}
-            <li className={skillIconStyle}>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <script xmlns="" id="nimlmejbmnecnaghgmbahmbaddhjbecg" />
                 <script xmlns="" />
@@ -429,7 +455,7 @@ function Sidebar() {
                   d="M64.242 73.542l-.05-.009-.051.008.119-.427-.018.428z"
                 />
               </svg>
-            </li>
+            </motion.li>
           </ul>
         </div>
         {/* Languages
@@ -441,7 +467,7 @@ function Sidebar() {
           <p className="text-xl font-medium">EXTRA SKILLS</p>
           <ul className="grid grid-cols-[1fr_1fr_1fr_1fr] gap-1">
             {/* GITHUB */}
-            <li className={skillIconStyle}>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <script xmlns="" id="nimlmejbmnecnaghgmbahmbaddhjbecg" />
                 <script xmlns="" />
@@ -459,9 +485,9 @@ function Sidebar() {
                   fill={darkMode ? `#f5f5f4` : `#082f49`}
                 />
               </svg>
-            </li>
+            </motion.li>
             {/* MONGOOSE */}
-            <li className={skillIconStyle}>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <script xmlns="" id="nimlmejbmnecnaghgmbahmbaddhjbecg" />
                 <script xmlns="" />
@@ -486,9 +512,9 @@ function Sidebar() {
                   transform="translate(-7.287 -32.362) scale(1.10979)"
                 />
               </svg>
-            </li>
+            </motion.li>
             {/* PANDAS */}
-            <li className={skillIconStyle}>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <script xmlns="" id="nimlmejbmnecnaghgmbahmbaddhjbecg" />
                 <script xmlns="" />
@@ -508,9 +534,9 @@ function Sidebar() {
                   d="M79.69 5.194h8.663v59.788H79.69z"
                 />
               </svg>
-            </li>
+            </motion.li>
             {/* REDUX */}
-            <li className={skillIconStyle}>
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <script xmlns="" id="nimlmejbmnecnaghgmbahmbaddhjbecg" />
                 <script xmlns="" />
@@ -520,23 +546,41 @@ function Sidebar() {
                   d="M88.69 88.11c-9 18.4-24.76 30.78-45.61 34.85a39.73 39.73 0 0 1-9.77 1.14c-12 0-23-5-28.34-13.19C-2.2 100-4.64 76.87 19 59.76c.48 2.61 1.46 6.19 2.11 8.31A38.24 38.24 0 0 0 10 81.1c-4.4 8.64-3.91 17.27 1.3 25.25 3.6 5.38 9.3 8.65 16.63 9.65a44 44 0 0 0 26.55-5c12.71-6.68 21.18-14.66 26.72-25.57a9.32 9.32 0 0 1-2.61-6A9.12 9.12 0 0 1 87.37 70h.34a9.15 9.15 0 0 1 1 18.25zm28.67-20.2c12.21 13.84 12.54 30.13 7.82 39.58-4.4 8.63-16 17.27-31.6 17.27a50.48 50.48 0 0 1-21-5.05c2.29-1.63 5.54-4.24 7.33-5.87a41.54 41.54 0 0 0 16 3.42c10.1 0 17.75-4.72 22.31-13.35 2.93-5.7 3.1-12.38.33-19.22a43.61 43.61 0 0 0-17.27-20.85 62 62 0 0 0-34.74-10.59h-2.93a9.21 9.21 0 0 1-8 5.54h-.31a9.13 9.13 0 0 1-.3-18.25h.33a9 9 0 0 1 8 4.89h2.61c20.8 0 39.06 7.98 51.42 22.48zm-82.75 23a7.31 7.31 0 0 1 1.14-4.73c-9.12-15.8-14-35.83-6.51-56.68C34.61 13.83 48.13 3.24 62.79 3.24c15.64 0 31.93 13.69 33.88 40.07-2.44-.81-6-2-8.14-2.44-.53-8.63-7.82-30.13-25.09-29.81-6.19.17-15.31 3.1-20 9.12a43.69 43.69 0 0 0-9.64 25.25 59.61 59.61 0 0 0 8.47 36.16 2.75 2.75 0 0 1 1.14-.16h.32a9.121 9.121 0 0 1 .33 18.24h-.33a9.16 9.16 0 0 1-9.12-8.79z"
                 />
               </svg>
-            </li>
+            </motion.li>
+            {/* Framer motion */}
+            <motion.li whileHover={skillsHover} className={skillIconStyle}>
+              <svg viewBox="0 0 128 128">
+                <path
+                  fill={darkMode ? `#f5f5f4` : `#082f49`}
+                  d="M0 46.028h24.62v12.127H12.16zm0 12.127h12.16l12.46 12.408H12.16v12.41L0 70.562zM40.282 73.74V55.417h11.33v3.661h-7.077v4.805h7.078v3.66h-7.078v6.197zm13.873 0V61.05h4.236v2.834c0-.845.565-1.708 1.13-2.271.847-.563 1.43-.845 2.276-.845.565 0 .847.282 1.13.282v3.678h-1.13c-1.13 0-1.994.282-2.559 1.127-.565.563-.847 1.689-.847 3.097v4.788zm15.566.564c-1.993 0-3.406-.846-4.535-1.972-.847-1.127-1.413-2.816-1.413-4.788 0-1.408.283-2.534.566-3.379a6.708 6.708 0 012.258-2.552c.848-.563 1.977-.845 3.124-.845.848 0 1.695.282 2.542.563.564.282 1.13.845 1.412 1.708v-1.99h4.236v12.69h-4.236V72.05c-.282.564-.848 1.127-1.412 1.69-.847.282-1.694.564-2.542.564zm1.13-3.38c1.13 0 1.694-.282 2.26-1.127.564-.563.846-1.408.846-2.253 0-1.126-.282-1.69-.847-2.534-.565-.563-1.13-.845-2.26-.845-.846 0-1.711.282-2.276.845-.564.845-.847 1.408-.847 2.534 0 .845.283 1.69.847 2.253.565.845 1.43 1.126 2.277 1.126zm10.183 2.816V61.05h3.953v1.989c.283-.863.847-1.145 1.413-1.707.864-.282 1.43-.564 2.276-.564 1.977 0 3.39.845 3.954 2.27.564-.58 1.13-1.143 1.694-1.706.847-.282 1.712-.564 2.56-.564 3.105 0 4.517 1.69 4.517 5.087v7.885h-3.953V66.7c0-.845-.282-1.409-.565-1.972-.283-.28-.847-.563-1.429-.563-.847 0-1.413.282-1.695.845-.282.281-.565 1.127-.565 2.253v6.477h-3.953V66.7c0-.845-.282-1.409-.565-1.972-.282-.28-.847-.563-1.412-.563-.582 0-1.148.282-1.711.845-.283.281-.566 1.127-.566 2.253v6.477zm35.935-7.04v1.97h-9.336c0 .846.282 1.41.847 1.972.282.281 1.129.563 1.976.563 1.412 0 1.977-.282 2.541-1.126h3.972c-.283 1.126-.848 2.253-2.259 3.098-1.13.563-2.559 1.126-4.254 1.126-2.259 0-3.953-.563-5.083-1.971a6.725 6.725 0 01-1.994-4.788c0-2.252.847-3.66 1.994-5.086 1.13-1.127 2.824-1.69 5.083-1.69 1.977 0 3.407.563 4.819 1.69 1.129 1.144 1.694 2.552 1.694 4.242zm-9.336-.564h5.364c0-.844-.281-1.408-.564-1.97-.565-.564-1.129-.564-1.977-.564-.847 0-1.694.282-2.259.563-.282.563-.564 1.127-.564 1.971zm11.596 7.604V61.05h3.97v2.834a6.192 6.192 0 011.412-2.271c.565-.563 1.413-.845 2.259-.845.283 0 .847.282 1.13.282v3.678h-1.412c-.847 0-1.695.282-2.259 1.127-.848.563-1.13 1.689-1.13 3.097v4.788z"
+                ></path>
+              </svg>
+            </motion.li>
           </ul>
         </div>
         {/* Info section */}
         <div className="flex w-full flex-col gap-3 border-t-2 pt-20 dark:text-brand-primary-dark">
           <p className="flex items-center justify-between text-base">
-            <span className="bg-brand-primary px-2">Age :</span>
+            <span className="rounded-md bg-brand-primary px-2">Age :</span>
             <span className="rounded-md bg-slate-200 px-2">24</span>
           </p>
           <p className="flex items-center justify-between text-base">
-            <span className="bg-brand-primary px-2">Residence :</span>
-            <span className="w-6">
-              <img src="/Icons/Flag_of_Bangladesh.svg" alt="Bangladesh Flag" />
+            <span className="rounded-md bg-brand-primary px-2">
+              Residence :
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="text-brand-secondary">Bangladesh</span>
+              <span>
+                <img
+                  src="/Icons/Flag_of_Bangladesh.svg"
+                  alt="Bangladesh Flag"
+                  width={24}
+                />
+              </span>
             </span>
           </p>
           <p className="flex items-center justify-between text-base">
-            <span className="bg-brand-primary px-2">Address :</span>
+            <span className="rounded-md bg-brand-primary px-2">Address :</span>
             <span className="rounded-md bg-slate-200 px-2">
               Dhaka, Bangladesh
             </span>

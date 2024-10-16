@@ -2,7 +2,8 @@ import Button from "@/components/Button";
 import Circle from "@/ui/shapes/Circle";
 import Square from "@/ui/shapes/Square";
 import Triangle from "@/ui/shapes/Triangle";
-
+import { Fragment } from "react";
+import { motion } from "framer-motion";
 export default function Home() {
   const shapeStyles =
     "absolute transition-all duration-1000 hover:animate-spin";
@@ -14,8 +15,8 @@ export default function Home() {
   const servicesPstyle2 =
     "text-center text-xs text-text-light dark:text-text-light-dark lg:text-base";
   return (
-    <main className="flex w-screen flex-col gap-10 overflow-auto pb-5 scrollbar lg:w-auto lg:gap-32 lg:pb-10">
-      <div className="items-left relative flex flex-col gap-6 bg-brand-secondary p-8 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:p-16">
+    <main className="flex w-screen flex-col gap-10 pb-5 scrollbar dark:text-brand-secondary lg:w-auto lg:gap-32 lg:overflow-y-scroll lg:pb-10">
+      <div className="items-left relative flex flex-col gap-6 bg-brand-secondary p-8 transition-colors duration-1000 dark:bg-brand-primary-dark lg:p-16">
         <p className="inline-block text-xl font-extrabold lg:w-2/3 lg:text-5xl">
           I&apos;m Mashrafie Rahim Sheikh <br />
           <span className="text-brand-primary">Full-Stack</span> Developer
@@ -31,48 +32,50 @@ export default function Home() {
         </div>
 
         {/* Shapes Background */}
-        <span className={`${RoundShapeStyles} left-[10%] top-[15%]`}>
-          {" "}
-          <Circle />{" "}
-        </span>
-        <span className={`${shapeStyles} left-[80%] top-[25%]`}>
-          {" "}
-          <Triangle />{" "}
-        </span>
-        <span className={`${shapeStyles} left-[70%] top-[47%]`}>
-          {" "}
-          <Square />{" "}
-        </span>
-        <span className={`${shapeStyles} left-[46%] top-[27%]`}>
-          {" "}
-          <Square />{" "}
-        </span>
-        <span className={`${shapeStyles} left-[24%] top-[76%]`}>
-          {" "}
-          <Triangle />{" "}
-        </span>
-        <span className={`${RoundShapeStyles} left-[40%] top-[60%]`}>
-          {" "}
-          <Circle />{" "}
-        </span>
-        <span className={`${RoundShapeStyles} left-[60%] top-[70%]`}>
-          {" "}
-          <Circle />{" "}
-        </span>
-        <span className={`${shapeStyles} left-[59%] top-[15%]`}>
-          {" "}
-          <Triangle />{" "}
-        </span>
-        <span className={`${shapeStyles} left-[69%] top-[85%]`}>
-          {" "}
-          <Square />{" "}
-        </span>
+        <Fragment>
+          <span className={`${RoundShapeStyles} left-[10%] top-[15%]`}>
+            {" "}
+            <Circle />{" "}
+          </span>
+          <span className={`${shapeStyles} left-[80%] top-[25%]`}>
+            {" "}
+            <Triangle />{" "}
+          </span>
+          <span className={`${shapeStyles} left-[70%] top-[47%]`}>
+            {" "}
+            <Square />{" "}
+          </span>
+          <span className={`${shapeStyles} left-[46%] top-[27%]`}>
+            {" "}
+            <Square />{" "}
+          </span>
+          <span className={`${shapeStyles} left-[24%] top-[76%]`}>
+            {" "}
+            <Triangle />{" "}
+          </span>
+          <span className={`${RoundShapeStyles} left-[40%] top-[60%]`}>
+            {" "}
+            <Circle />{" "}
+          </span>
+          <span className={`${RoundShapeStyles} left-[60%] top-[70%]`}>
+            {" "}
+            <Circle />{" "}
+          </span>
+          <span className={`${shapeStyles} left-[59%] top-[15%]`}>
+            {" "}
+            <Triangle />{" "}
+          </span>
+          <span className={`${shapeStyles} left-[69%] top-[85%]`}>
+            {" "}
+            <Square />{" "}
+          </span>
+        </Fragment>
       </div>
       {/* Services Section */}
       <div className="">
         <div className="flex flex-col items-center gap-6 px-8 lg:px-48">
           <p className="text-3xl font-bold">My Services</p>
-          <p className="mb-10 text-center text-text-light transition-colors duration-1000">
+          <p className="mb-10 text-center text-text-light transition-colors duration-1000 dark:text-text-light-dark">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. lorem ipsum
           </p>
@@ -80,7 +83,12 @@ export default function Home() {
         <div className="">
           <ul className="grid grid-cols-2 gap-5 p-3 lg:grid-cols-3">
             {/* Front-end section */}
-            <li className="flex flex-col items-center gap-4 bg-brand-secondary px-4 py-4 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:p-8">
+            <motion.li
+              whileHover={{
+                scale: 1.05,
+              }}
+              className="flex flex-col items-center gap-4 bg-brand-secondary px-4 py-4 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:p-8"
+            >
               <svg
                 width="68"
                 height="68"
@@ -102,8 +110,13 @@ export default function Home() {
                 amet sint. Velit officia consequat duis enim velit mollit. lorem
                 ipsum
               </p>
-            </li>
-            <li className={serviceListStyles}>
+            </motion.li>
+            <motion.li
+              whileHover={{
+                scale: 1.05,
+              }}
+              className={serviceListStyles}
+            >
               <svg
                 className="fill-brand-primary"
                 width="68"
@@ -123,8 +136,13 @@ export default function Home() {
                 amet sint. Velit officia consequat duis enim velit mollit. lorem
                 ipsum
               </p>
-            </li>
-            <li className={serviceListStyles}>
+            </motion.li>
+            <motion.li
+              whileHover={{
+                scale: 1.05,
+              }}
+              className={serviceListStyles}
+            >
               <svg
                 className="fill-brand-primary"
                 width="68"
@@ -151,7 +169,7 @@ export default function Home() {
                 amet sint. Velit officia consequat duis enim velit mollit. lorem
                 ipsum
               </p>
-            </li>
+            </motion.li>
           </ul>
         </div>
       </div>

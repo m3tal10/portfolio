@@ -1,15 +1,17 @@
+import { motion } from "framer-motion";
 function education() {
-  const listStyles = "grid grid-cols-[2fr_3fr] gap-10 pt-4 lg:gap-40";
+  const listStyles =
+    "grid grid-cols-[2fr_3fr] gap-10 border-t-2 pt-10 transition-all duration-300 hover:border-t-text-light lg:gap-40";
   const leftSpanStyles =
     "text-sm text-text-light dark:text-text-light-dark md:text-base";
   const rightSpanStyles = "";
   return (
-    <main className="mt-8 flex flex-col items-center gap-8 overflow-y-auto p-3 pb-5 scrollbar lg:pb-10">
+    <main className="mt-8 flex flex-col items-center gap-8 overflow-y-auto p-3 pb-5 scrollbar dark:text-brand-secondary lg:gap-20 lg:pb-10">
       <p className="text-center text-xl font-bold md:text-2xl lg:text-3xl">
         Education
       </p>
 
-      <ul className="flex flex-col gap-10 rounded-md bg-brand-secondary p-6 transition-colors duration-1000 dark:bg-brand-primary-dark dark:text-brand-secondary lg:gap-20">
+      <ul className="flex flex-col gap-10 rounded-md bg-brand-secondary p-6 transition-colors duration-1000 dark:bg-brand-primary-dark">
         <li className="grid grid-cols-[2fr_3fr] gap-10 lg:gap-40">
           <div className="block items-start">
             <p className="mb-4 text-sm font-medium md:text-xl">
@@ -42,8 +44,9 @@ function education() {
             </p>
           </div>
         </li>
+
         {/* Certificate 01 */}
-        <li className="grid grid-cols-[2fr_3fr] gap-10 border-t-2 pt-10 lg:gap-40">
+        <li className="grid grid-cols-[2fr_3fr] gap-10 border-t-2 pt-10 transition-all duration-300 hover:border-t-text-light lg:gap-40">
           <div className="block items-start">
             <p className="mb-4 text-sm font-medium md:text-xl">
               University of the People
@@ -76,7 +79,7 @@ function education() {
           </div>
         </li>
         {/* Certificate 02 */}
-        <li className="grid grid-cols-[2fr_3fr] gap-10 border-t-2 pt-10 lg:gap-40">
+        <li className={listStyles}>
           <div className="block items-start">
             <p className="mb-4 text-sm font-medium md:text-xl">
               University of the People
@@ -109,7 +112,7 @@ function education() {
           </div>
         </li>
         {/* Certificate 03 */}
-        <li className="grid grid-cols-[2fr_3fr] gap-10 border-t-2 pt-10 lg:gap-40">
+        <li className={listStyles}>
           <div className="block items-start">
             <p className="mb-4 text-sm font-medium md:text-xl">
               University of the People

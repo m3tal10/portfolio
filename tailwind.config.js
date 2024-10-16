@@ -20,6 +20,7 @@ module.exports = {
 
         //Dark mode
         "brand-primary-dark": "#082f49", //sky-950
+        "brand-secondary-dark": "#111827", //slate-500
         "text-light-dark": "#cbd5e1", //slate-300
       },
     },
@@ -30,6 +31,7 @@ module.exports = {
         ".scrollbar": {
           "&::-webkit-scrollbar": {
             width: "8px",
+            position: "absolute",
           },
           "&::-webkit-scrollbar-thumb": {
             backgroundColor: "#fbbf24",
@@ -38,7 +40,6 @@ module.exports = {
             backgroundClip: "content-box",
           },
           "&::-webkit-scrollbar-track": {
-            backgroundColor: "#f5f5f4",
             borderRadius: "6px",
           },
         },

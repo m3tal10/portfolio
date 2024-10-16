@@ -1,10 +1,14 @@
 "use client";
 
-import Image from "next/image";
-
+import { motion } from "framer-motion";
 function ProjectItem() {
   return (
-    <li className="min-w-36 overflow-auto rounded-md bg-brand-secondary transition-all duration-1000 scrollbar dark:bg-brand-primary-dark dark:text-brand-secondary">
+    <motion.li
+      whileHover={{
+        scale: 1.1,
+      }}
+      className="min-w-36 rounded-md bg-brand-secondary transition-colors duration-1000 scrollbar dark:bg-brand-primary-dark dark:text-brand-secondary"
+    >
       <div className="group relative p-8 transition duration-1000 hover:bg-yellow-400">
         <span className="absolute left-[40%] top-[40%] text-6xl font-extralight opacity-0 transition duration-1000 group-hover:opacity-100 dark:text-brand-primary-dark">
           +
@@ -17,7 +21,7 @@ function ProjectItem() {
         />
         <p className="text-center text-lg font-bold">Natours</p>
       </div>
-    </li>
+    </motion.li>
   );
 }
 
