@@ -4,6 +4,7 @@ import Square from "@/ui/shapes/Square";
 import Triangle from "@/ui/shapes/Triangle";
 import { Fragment } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 export default function Home() {
   const shapeStyles =
     "absolute transition-all duration-1000 hover:animate-spin";
@@ -23,12 +24,19 @@ export default function Home() {
         </p>
 
         <p className="mb-4 w-[400px] text-text-light dark:text-text-light-dark">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat
-          feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc
-          lectus.
+          I am a skilled web developer with expertise in the MERN stack
+          (MongoDB, Express.js, React, Node.js) and Python. With a passion for
+          creating dynamic and responsive web applications, I can develop robust
+          front-end interfaces and scalable back-end systems. My experience
+          extends across building full-stack projects, leveraging my knowledge
+          in React for interactive UIs and Python for versatile programming
+          solutions. I am committed to delivering clean, efficient code and
+          continually expanding my skill set in modern technologies.
         </p>
         <div className="">
-          <Button>HIRE ME &rarr;</Button>
+          <Link href="/contact">
+            <Button>HIRE ME &rarr;</Button>
+          </Link>
         </div>
 
         {/* Shapes Background */}
@@ -76,8 +84,8 @@ export default function Home() {
         <div className="flex flex-col items-center gap-6 px-8 lg:px-48">
           <p className="text-3xl font-bold">My Services</p>
           <p className="mb-10 text-center text-text-light transition-colors duration-1000 dark:text-text-light-dark">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. lorem ipsum
+            I have expertise in the following services, I am eager to learn and
+            work more.
           </p>
         </div>
         <div className="">
@@ -106,11 +114,13 @@ export default function Home() {
                 Front-end Development
               </p>
               <p className="text-center text-xs text-text-light dark:text-text-light-dark lg:text-base">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit. lorem
-                ipsum
+                I can make responsive UIs with React and Nextjs. I am familiar
+                styling with CSS modules, CSS styled components, Tailwind CSS.
+                Overall, I can successfully build robust and scalable front-end
+                applications.
               </p>
             </motion.li>
+            {/* Backend section */}
             <motion.li
               whileHover={{
                 scale: 1.05,
@@ -132,9 +142,9 @@ export default function Home() {
               </svg>
               <p className={servicesPstyle1}>Back-end Development</p>
               <p className={servicesPstyle2}>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit. lorem
-                ipsum
+                I can make scalable backend systems using Nodejs and ExpressJs.
+                JWT-based authentication, authorization, email handler, and
+                payment gateway integration are all in my niche.
               </p>
             </motion.li>
             <motion.li
@@ -163,11 +173,11 @@ export default function Home() {
                   <path d="M475.606,226.804h-56.918c-2.209,0-4,1.791-4,4s1.791,4,4,4h56.918c2.209,0,4-1.791,4-4S477.815,226.804,475.606,226.804z" />
                 </g>
               </svg>
-              <p className={servicesPstyle1}>Data Modeling</p>
+              <p className={servicesPstyle1}>Database Modeling</p>
               <p className={servicesPstyle2}>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit. lorem
-                ipsum
+                I am experienced in NoSQL, PostgreSQL and SQL databases. I can
+                model and validate data that ensures proper scaling and
+                security.
               </p>
             </motion.li>
           </ul>

@@ -16,6 +16,7 @@ function contact() {
           Contact Information
         </p>
         <ul className="flex flex-col items-center gap-4 md:gap-5 lg:gap-6">
+          {/* Address */}
           <motion.li
             whileHover={{
               scale: 1.05,
@@ -103,6 +104,12 @@ function contact() {
                 <span className="font-medium">Telegram: </span>
                 <span className="flex items-center gap-1 text-text-light dark:text-text-light-dark">
                   @m3tal10
+                </span>
+              </p>
+              <p className="flex flex-row justify-between">
+                <span className="font-medium">WhatsApp: </span>
+                <span className="flex items-center gap-1 text-text-light dark:text-text-light-dark">
+                  +8801716910519
                 </span>
               </p>
             </div>

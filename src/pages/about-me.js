@@ -619,7 +619,12 @@ function About() {
         </p>
       </div>
       {/* BUTTON */}
-      <Button> DOWNLOAD CV &darr;</Button>
+      <Link
+        href="/docs/Mashrafie_Rahim_Sheikh_Resume.pdf"
+        download="/docs/Mashrafie_Rahim_Sheikh_Resume.pdf"
+      >
+        <Button> DOWNLOAD CV &darr;</Button>
+      </Link>
     </main>
   );
 }

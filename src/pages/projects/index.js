@@ -37,7 +37,7 @@ function projects() {
         />
         <ProjectItem
           image="turtle-road-cross.png"
-          name="Road Cross"
+          name="Turtle Cross"
           link="https://github.com/m3tal10/turtle-crossing-road"
         />
       </ul>
