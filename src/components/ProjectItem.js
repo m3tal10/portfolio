@@ -16,7 +16,7 @@ function ProjectItem({ image, name, link }) {
           <img
             className="h-56 w-32 transition duration-1000 hover:opacity-40"
             src={`/images/projectImages/${image}`}
-            alt="natours"
+            alt={image}
           />
           <p className="text-center text-lg font-bold">{name}</p>
         </div>
