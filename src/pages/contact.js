@@ -154,7 +154,7 @@ function contact() {
                       width="24px"
                     />
                   </span>
-                  +8801716910519
+                  +8801518967299
                 </span>
               </p>
             </div>
