@@ -13,7 +13,7 @@ function Layout({ children }) {
 
   return (
     <div className={` ${darkMode ? "dark" : ""} ${inter.variable} `}>
-      <div className="dark:bg-brand-secondary-dark grid h-screen grid-rows-[100px_1fr] gap-7 bg-text-light-dark font-sans text-sm text-brand-primary-dark transition-colors duration-1000 lg:grid-cols-[305px_1fr_108px] lg:grid-rows-none">
+      <div className="grid h-screen grid-rows-[100px_1fr] gap-7 bg-text-light-dark font-sans text-sm text-brand-primary-dark transition-colors duration-1000 dark:bg-brand-secondary-dark lg:grid-cols-[305px_1fr_108px] lg:grid-rows-none">
         <div className=""></div>
         <Sidebar />
         {children}

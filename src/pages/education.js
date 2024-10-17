@@ -50,8 +50,8 @@ function education() {
                 <li> 2 times Dean&apos;s list honor.</li>
                 <li> Uopeople ambassador.</li>
                 <li>
-                  Sustainability Badge for contributing to Uopeople's global
-                  sustainability program.
+                  Sustainability Badge for contributing to Uopeople&apos;s
+                  global sustainability program.
                 </li>
               </ul>
             </div>
