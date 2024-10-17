@@ -1,7 +1,7 @@
 import { useDarkMode } from "@/contextAPI/DarkModeProvider";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
