@@ -9,9 +9,8 @@ function Navbar() {
   const isActive = (href) => {
     return href === path;
   };
-
   const navListStyle =
-    "group flex h-10 w-10 items-center justify-center rounded-full hover:bg-brand-primary dark:bg-brand-primary-dark dark:hover:bg-brand-primary";
+    "group flex h-10 w-10 items-center justify-center rounded-full";
 
   const navIconStyle =
     "h-full w-full p-2 transition-all duration-300 group-hover:fill-brand-primary-dark";
@@ -37,18 +36,20 @@ function Navbar() {
 
       <ul className="flex flex-row items-center justify-between gap-6 rounded-md border border-brand-primary p-2 lg:flex-col lg:gap-10">
         {/* Home Icon*/}
-        <Link href="/" className="">
-          <motion.li
-            whileHover={{
-              scale: 1.1,
-            }}
-            className={`group flex h-10 w-10 items-center justify-center rounded-full hover:bg-brand-primary dark:bg-brand-primary-dark dark:hover:bg-brand-primary ${isActive("/") ? "bg-brand-primary dark:bg-brand-primary" : "bg-brand-secondary"}`}
-          >
+        <motion.li
+          whileHover={
+            {
+              // scale: 1.1,
+            }
+          }
+          className={`${isActive("/") ? "bg-brand-primary" : "bg-brand-secondary hover:bg-brand-primary dark:bg-brand-primary-dark dark:hover:bg-brand-primary"} group flex h-10 w-10 items-center justify-center rounded-full`}
+        >
+          <Link href="/" className="">
             <svg
               viewBox="0 0 18 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className={`h-full w-full p-2 transition-all duration-300 group-hover:fill-brand-primary-dark ${isActive("/") ? "fill-brand-primary-dark dark:fill-brand-primary-dark" : "fill-text-light dark:fill-brand-secondary"} `}
+              className={`${isActive("/") ? "fill-brand-primary-dark" : "fill-text-light dark:fill-brand-secondary"} h-full w-full p-2 transition-all duration-300 group-hover:fill-brand-primary-dark`}
             >
               <g clipPath="url(#clip0_3_204)">
                 <path d="M15 14.9999C15 15.1989 14.921 15.3896 14.7803 15.5303C14.6397 15.6709 14.4489 15.7499 14.25 15.7499H3.75C3.55109 15.7499 3.36032 15.6709 3.21967 15.5303C3.07902 15.3896 3 15.1989 3 14.9999V8.24994H0.75L8.49525 1.20894C8.63333 1.0833 8.81331 1.01367 9 1.01367C9.18669 1.01367 9.36667 1.0833 9.50475 1.20894L17.25 8.24994H15V14.9999Z" />
@@ -59,8 +60,8 @@ function Navbar() {
                 </clipPath>
               </defs>
             </svg>
-          </motion.li>
-        </Link>
+          </Link>
+        </motion.li>
         {/* Services Icon  */}
 
         {/* <li className={navListStyle}>
@@ -89,20 +90,20 @@ function Navbar() {
           </svg>
         </li> */}
         {/* Education Icon*/}
-        <Link href="education">
-          <motion.li
-            whileHover={{
-              scale: 1.1,
-            }}
-            className={`${navListStyle} ${isActive("/education") ? "bg-brand-primary dark:bg-brand-primary" : "bg-brand-secondary"}`}
-          >
+        <motion.li
+          whileHover={{
+            scale: 1.1,
+          }}
+          className={`${navListStyle} ${isActive("/education") ? "bg-brand-primary" : "bg-brand-secondary hover:bg-brand-primary dark:bg-brand-primary-dark dark:hover:bg-brand-primary"}`}
+        >
+          <Link href="education">
             <svg
               width="18"
               height="18"
               viewBox="0 0 18 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className={`${navIconStyle} ${isActive("/education") ? "fill-brand-primary-dark dark:fill-brand-primary-dark" : "fill-text-light dark:fill-brand-secondary"}`}
+              className={`${navIconStyle} ${isActive("/education") ? "fill-brand-primary-dark" : "fill-text-light dark:fill-brand-secondary"}`}
             >
               <g clipPath="url(#clip0_3_219)">
                 <path d="M12.7636 11.272L9.25 14.6259L5.73638 11.272C3.10301 11.381 1 13.4376 1 15.9759V16.3134C1 17.245 1.79185 18.0009 2.76786 18.0009H15.7321C16.7081 18.0009 17.5 17.245 17.5 16.3134V15.9759C17.5 13.4376 15.397 11.381 12.7636 11.272ZM1.50089 2.80635L1.73661 2.85909V4.91221C1.47879 5.05987 1.29464 5.31651 1.29464 5.62589C1.29464 5.9212 1.46406 6.16729 1.70346 6.31846L1.12891 8.5087C1.06629 8.75128 1.20625 9.00089 1.40882 9.00089H2.94833C3.15089 9.00089 3.29085 8.75128 3.22824 8.5087L2.65368 6.31846C2.89308 6.16729 3.0625 5.9212 3.0625 5.62589C3.0625 5.31651 2.87835 5.05987 2.62054 4.91221V3.06299L5.05134 3.62198C4.7346 4.22667 4.53571 4.90167 4.53571 5.62589C4.53571 8.11143 6.64609 10.1259 9.25 10.1259C11.8539 10.1259 13.9643 8.11143 13.9643 5.62589C13.9643 4.90167 13.7691 4.22667 13.4487 3.62198L16.9954 2.80635C17.6657 2.65166 17.6657 1.85362 16.9954 1.69893L9.98292 0.0817384C9.50413 -0.0272461 8.99955 -0.0272461 8.52076 0.0817384L1.50089 1.69541C0.834263 1.8501 0.834263 2.65166 1.50089 2.80635Z" />
@@ -113,16 +114,16 @@ function Navbar() {
                 </clipPath>
               </defs>
             </svg>
-          </motion.li>
-        </Link>
+          </Link>
+        </motion.li>
         {/* Portfolio Icon */}
-        <Link href="projects">
-          <motion.li
-            whileHover={{
-              scale: 1.1,
-            }}
-            className={`${navListStyle} ${isActive("/projects") ? "bg-brand-primary dark:bg-brand-primary" : "bg-brand-secondary"}`}
-          >
+        <motion.li
+          whileHover={{
+            scale: 1.1,
+          }}
+          className={`${navListStyle} ${isActive("/projects") ? "bg-brand-primary" : "bg-brand-secondary hover:bg-brand-primary dark:bg-brand-primary-dark dark:hover:bg-brand-primary"}`}
+        >
+          <Link href="projects">
             <svg
               width="18"
               height="18"
@@ -140,16 +141,16 @@ function Navbar() {
                 </clipPath>
               </defs>
             </svg>
-          </motion.li>
-        </Link>
+          </Link>
+        </motion.li>
         {/* Contact Icon */}
-        <Link href="contact">
-          <motion.li
-            whileHover={{
-              scale: 1.1,
-            }}
-            className={`${navListStyle} ${isActive("/contact") ? "bg-brand-primary dark:bg-brand-primary" : "bg-brand-secondary"}`}
-          >
+        <motion.li
+          whileHover={{
+            scale: 1.1,
+          }}
+          className={`${navListStyle} ${isActive("/contact") ? "bg-brand-primary" : "bg-brand-secondary hover:bg-brand-primary dark:bg-brand-primary-dark dark:hover:bg-brand-primary"}`}
+        >
+          <Link href="contact">
             <svg
               width="18"
               height="18"
@@ -167,8 +168,8 @@ function Navbar() {
                 </clipPath>
               </defs>
             </svg>
-          </motion.li>
-        </Link>
+          </Link>
+        </motion.li>
       </ul>
 
       <motion.button
